@@ -18,9 +18,7 @@ ___
 
 
  #### Intregrantes: 👨‍💻 👩‍💻 👨‍💻 👩‍💻 
-
- + **Victor Munera**: 23 años. Estudiante de ingeniería electrónica. Actualmente freight broker. Fan de los puzzles y mind riddles. Me gusta el sudoku jaja ❤️
-
+ 
  + **Laura Oviedo**: soy diseñadora gráfica, tengo 35, vivo en san martín, Buenos Aires. Tengo un hijo de 5 años. Fan de River, Star wars y Harry Potter.
 
  + **Margarita Gonzalez**: soy estudiante de Derecho, tengo 21 años y vivo en CABA. Me gusta escuchar podcasts, leer libros y juntarme con amigxs.

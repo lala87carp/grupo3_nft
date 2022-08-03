@@ -1,0 +1,61 @@
+[
+ {
+  "id": 1,
+  "name": "Nappy",
+  "surname": "Scherer",
+  "username": "marcos",
+  "email": "nscherer0@so-net.ne.jp",
+  "password": "cYKBOzhS",
+  "image": "nscherer0",
+  "date": "21/07/1997"
+ },
+ {
+  "id": 2,
+  "name": "carlos ",
+  "surname": "lopez",
+  "username": "carlospe",
+  "email": "carlos@gmail.com",
+  "password": "123456",
+  "date": "1992-07-06"
+ },
+ {
+  "id": 3,
+  "name": "Marcos",
+  "surname": "perez",
+  "username": "marcos",
+  "email": "marcos@gmail.com",
+  "password": "123456789",
+  "date": "1879-05-22"
+ },
+ {
+  "id": 4,
+  "name": "mica",
+  "surname": "hals",
+  "username": "micah",
+  "email": "micah@gmail.com",
+  "password": "12345",
+  "image": "foto-1657574185710.pdf",
+  "date": "1999-05-06"
+ },
+ {
+  "id": 5,
+  "name": "maggie",
+  "surname": "gonza",
+  "username": "maggiegonzalezp",
+  "email": "margarita.gonzalez@vicentelopez.gov.ar",
+  "password": "123456",
+  "image": "foto-1658109294799.jpeg",
+  "date": "2008-08-18"
+ },
+ {
+  "id": 6,
+  "name": "trini",
+  "surname": "pepe",
+  "username": "trinipp",
+  "email": "trini@hotmail.com",
+  "password": "$2a$10$qdDvppy/q1fMsWiDI6ZuAe5OvMA77IKj1TPsNn24F8tm.MZ6dELNG",
+  "image": "foto-1658187081112.jpeg",
+  "date": "2007-07-07"
+ }
+
+]

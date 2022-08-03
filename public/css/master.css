@@ -1,0 +1,725 @@
+/* en teoria es mobile first - hacia el final estan las media queries, divido en mobile, table, laptop*/
+
+*{
+    margin: 0px;
+    padding: 0px;    
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat';
+    background-color: rgb(243, 243, 243);
+}
+
+tr th{
+padding-inline-start:200px;
+
+}
+tr td{
+    padding-inline-start:210px; 
+}
+
+
+header {
+    width: 100%;
+    border-bottom: 2px;
+    border-bottom-color: darkgray;
+    border-bottom-style: solid;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    /* ver como dejar barra fija*/
+
+}
+
+.admin{
+    width: 100%;
+    color: #f1f1f1;
+    text-align: center;
+    background-color:#2c638d;
+}
+.titulo{
+    position:absolute;
+    text-align: center;
+    padding-bottom: 400px;
+  
+   
+}
+.user-img{
+    position:relative;
+    padding-right: 600px;
+   
+}
+
+
+
+.logo {
+    display: flex;
+    justify-content: center;
+}
+.logo img {
+    width: 23%;
+}
+
+.error-404 img{
+    width: 70%;
+    position: relative;
+    padding: 10px;
+    
+}
+
+.barra-logo {
+    width: 100%;
+    background-color: #2c638d;
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 10px;
+    font-size: 22px;
+}
+.faCart{
+    color: #fff;
+}
+.faUser{
+    color: #fff;
+}
+
+.iconos-barra-logo {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu-hamburguesa i {
+    margin-right: 15px;
+}
+
+.iconos-barra-logo i{
+    margin-left: 15px;
+    color: #fff;
+}
+
+.menu-header {
+    display: none;
+}
+
+.buscador {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.caja-buscador {
+    width: 70%;
+    border: 1px solid #ff740f;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+}
+
+.boton-buscador {
+    width: 40px;
+    border: 1px solid #ff740f;
+    background: #ff740f;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    
+}
+
+.boton-novedades {
+    background-color: white;
+    border-radius: 30px;
+    font-size: 12px;
+    padding: 5px 20px 5px 20px;
+    border: 1px solid #ff740f;
+    color: #2c638d;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 3px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.espacio-boton-novedades{
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.info-novedades {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.texto-novedades{
+    padding: 20px;
+    color: #fff;
+}
+
+.novedades {
+    background-color: #f0992d;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.carrousel-novedades{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.imagen-novedades img {
+    width: 80%;
+}
+
+.novedades-tablet {
+    display: none;
+}
+
+.flecha {
+    font-size: 20px;
+    color: #fff;
+}
+
+.nuevas-obras {
+    width: 100%;
+    padding-top: 30px;
+    
+}
+
+.nuevas-obras h1, .top-artistas h1 {
+    padding: 15px;      
+    color: #1c415d;
+}
+
+.galeria-obras, galeria-top-artistas{
+    width: 100%;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: space-between;
+}
+
+.obra-individual{
+    width: 50%;
+    padding: 10px;
+}
+
+.obra-individual img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+
+
+.imagen-artista {
+    width: 30%;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.datos-artista {
+    width: 50%;
+    height: 100px;
+    color: #3e3e3e;
+}
+
+.artista{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    justify-items: center;
+    padding-top: 15px;
+}
+
+.preguntas-frecuentes {
+    width: 100%;
+    padding: 10px 40px;
+    display: flex;
+    flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: center;
+    font-size: 24px;
+    color: #2c638d;
+    border-bottom: 1px solid #575757;
+    padding-bottom: 20px;
+}
+
+
+.login {
+    width: 100%;
+    padding: 8% 0 0;
+    margin: auto;
+  }
+
+  .form input {
+    outline: 0;
+    background: #fff;
+    width: 80%;
+    border: 0.5px solid #193b55;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    
+  }
+  .form button {
+    text-transform: uppercase;
+    outline: 0;
+    background: #193b55;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+  }
+  .form button:hover,.form button:active,.form button:focus {
+    background: #193b55;
+  }
+  .form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+  }
+  .form .message a {
+    color: #2c638d;
+    text-decoration: none;
+  }
+  .form .registro-form {
+    display: none;
+  }
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .login-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 50px;
+  }
+
+  .marketplace {
+      display: none;
+  }
+
+  .my-account {
+      display: none;
+  }
+
+  .accesos-footers{
+      display: none;
+  }
+
+  
+footer {
+    width: 100%;
+    background-color: #193b55;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap ;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.contact i{
+    color: #fff;
+    padding-left: 8px;
+    padding-top: 10px;
+}
+
+.nosotros {
+    width: 200px;
+    padding-bottom: 20px;
+}
+
+.nosotros p{
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.contact {
+    padding-bottom: 20px;
+}
+
+.accesos-footer {
+    padding-bottom: 20px;
+}
+
+/* preguntas-frecuentes */
+
+.dropbtn {
+   
+    background-color: #193b55;
+     color: white; 
+    padding: 16px;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    
+  }
+  
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #0c7dc8;
+  }
+  
+  .dropdown{
+    position: relative;
+    width: 100%;
+    padding-top: 60px;
+  }
+ 
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 184px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {background-color: #ddd;}
+  
+  .show {display: block;}
+
+
+
+
+
+
+/* preguntas-frecuentes */
+
+
+
+
+/* codigo viejo, lo dejo anulado por las dudas estoy armando las cosas como mobile fisrt
+
+
+
+
+
+footer {
+    width: 100%;
+    background-color: #193b55;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap ;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.nosotros {
+    width: 200px;
+}
+
+.nosotros p{
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.acceso-footers {
+    width: 200px;
+    display: flex;
+    font-size: 18px;
+    list-style-type: none;
+    padding: 5px;
+    margin: 10px;
+    
+}
+
+.acceso-footers ul li{
+    list-style: none;
+}
+
+main {
+    width: 90%;
+    height: 2000px;
+}
+
+*/
+
+@media (min-width: 460px){
+    /*TABLET*/
+    .iconos-barra-logo i {
+        font-size: 35px;
+    }
+    
+    .novedades {
+        display: none;
+    }
+    
+    .info-novedades-tablet{
+       
+        display: flex;
+	   flex-direction: column;
+	   flex-wrap: wrap;
+	   justify-content: center;
+	   align-items: center;
+	   align-content: space-around;
+    }
+    
+    .info-novedades-tablet-texto{
+        color: #fff;
+        width: 60%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .info-novedades-tablet-boton {
+        padding-top: 30px;
+    }
+    
+    .novedades-imagen-tablet img{
+        
+        width: 80%;
+    }
+    
+    .flechas-tablet{
+        
+        font-size: 50px;
+        color: #fff;
+    }
+    
+    .novedades-tablet{
+        background-color: #f0992d;
+        width: 80%;
+        display: flex;
+	    flex-direction: row;
+	    flex-wrap: nowrap;
+	    justify-content: space-between;
+	    align-items: center;
+	    align-content: stretch;
+        padding: 20px;
+        border-radius: 20px;
+    }
+    
+    main {
+       display: flex;
+	   flex-direction: row;
+       flex-wrap: wrap;
+	   justify-content: center;
+	   align-items: center;
+	   align-content: space-between;
+        padding: 40px;
+        
+    }
+    
+    .obra-individual{
+        width: 30%;
+        padding: 10px;
+    }
+    
+    .galeria-top-artistas{
+       display: flex;
+	   flex-direction: row;
+	   flex-wrap: wrap;
+	   justify-content: space-between;
+	   align-items: flex-start;
+	   align-content: space-between;
+        width: 100%;
+    }
+    
+    .artista {
+        width: 40%;
+    }
+    
+    .top-artistas {
+        width: 100%;
+    }
+    
+    footer {
+    width: 100%;
+    background-color: #193b55;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap ;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.login {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #193b55;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #193b55;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #2c638d;
+  text-decoration: none;
+}
+.form .registro-form {
+  display: none;
+}
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+
+
+}
+
+@media (min-width: 768px){
+    /*LAPTOP*/
+    .menu-hamburguesa {
+        display: none;
+    }
+    
+    .logo img{
+        width: 15%;
+    }
+    
+    .barra-logo {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+    
+    .iconos-barra-logo {
+        padding-right: 50px;
+    }
+    
+    .iconos-barra-logo i {
+        font-size: 40px;
+    }
+    
+    .menu-header {
+        display: flex;
+        color: #102636;
+        border: 1px solid #2c638d; 
+    }
+    .menu-header ul {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        justify-items: center;
+        align-content: space-between;
+        font-size: 18px;
+        list-style-type: none;
+        padding: 5px;
+        margin: 10px;
+    
+    }
+
+    .menu-header ul li {
+        margin-left: 50px;
+    }
+    
+    .caja-buscador {
+        width: 50%;
+    }
+    
+    .buscador {
+        padding: 15px;
+    }
+    
+    .obra-individual{
+    width: 20%;
+    padding: 10px;
+}
+
+
+
+
+.acceso-footers {
+    width: 200px;
+    display: flex;
+    font-size: 18px;
+    list-style-type: none;
+    padding: 5px;
+    margin: 10px;
+    
+}
+
+.marketplace ul li, .my-account ul li, .accesos-footer ul li{
+    list-style: none;
+    padding-top: 5px;
+}
+
+
+
+}

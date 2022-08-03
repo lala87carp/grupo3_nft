@@ -1,3 +1,4 @@
+
 # I ❤️ NFT Grupo_3 
 ___
  #### I ❤️ NFT es un E-comerce pensado para todas aquellas personas que quieran adquirir un NFT a modo de inversión, colección, o simplemente apreciar lo que ofrece el mercado. Los NFT o 'tokens' no fungibles, son activos digitales certificados mediante la tecnología blockchain. La criptografía de estos tokens es la que convierte estos activos en únicos: no hay dos iguales, y no se pueden cambiar entre sí. Esto permite acreditar que la persona que lo ha comprado es su único propietario.
@@ -18,7 +19,9 @@ ___
 
 
  #### Intregrantes: 👨‍💻 👩‍💻 👨‍💻 👩‍💻 
- 
+
+ + **Victor Munera**: 23 años. Estudiante de ingeniería electrónica. Actualmente freight broker. Fan de los puzzles y mind riddles. Me gusta el sudoku jaja ❤️
+
  + **Laura Oviedo**: soy diseñadora gráfica, tengo 35, vivo en san martín, Buenos Aires. Tengo un hijo de 5 años. Fan de River, Star wars y Harry Potter.
 
  + **Margarita Gonzalez**: soy estudiante de Derecho, tengo 21 años y vivo en CABA. Me gusta escuchar podcasts, leer libros y juntarme con amigxs.

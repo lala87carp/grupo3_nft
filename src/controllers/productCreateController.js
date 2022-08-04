@@ -10,6 +10,8 @@ const controller = {
     },
 
     create: (req, res) => {
+        
+        //
 
         let productDataBase = JSON.parse(fs.readFileSync(path.resolve(__dirname,"../Data/productDataBase.json")));
         const ultimoProduct = productDataBase.pop();

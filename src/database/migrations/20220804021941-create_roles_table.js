@@ -1,5 +1,3 @@
-//up para correr migracion y down para hacer un rolback 
-
 'use strict';
 
 module.exports = {
@@ -10,6 +8,16 @@ module.exports = {
      * Example:
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
+     await queryInterface.createTable('roles', {
+       id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+
+       },
+       name:Sequelize.STRING
+    
+      });
   },
 
   async down (queryInterface, Sequelize) {
@@ -19,5 +27,6 @@ module.exports = {
      * Example:
      * await queryInterface.dropTable('users');
      */
+     await queryInterface.dropTable('roles');
   }
 };

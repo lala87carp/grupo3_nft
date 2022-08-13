@@ -1,8 +1,4 @@
-//up para correr migracion y down para hacer un rolback 
-
 'use strict';
-
-const sequelize = require("sequelize");
 
 module.exports = {
   async up (queryInterface, Sequelize) {
@@ -12,8 +8,7 @@ module.exports = {
      * Example:
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
-
-     await queryInterface.createTable('users', { 
+     await queryInterface.createTable('products', { 
       id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -23,11 +18,11 @@ module.exports = {
         type: Sequelize.STRING(255),
         allowNull: false
       },
-      email: {
-        type: Sequelize.STRING(255),
+      price: {
+        type: Sequelize.DECIMAL(11,2),
         allowNull: false
       },
-      password: {
+      autor: {
         type: Sequelize.STRING(255),
         allowNull: false
       },
@@ -37,16 +32,18 @@ module.exports = {
           allowNull: true 
 
       },
-      birthday:{
-        type: Sequelize.DATE
+      description:{
+        type: Sequelize.TEXT,
+        allowNull: true 
+
 
       },
-      roles_id: {
+      category_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
           model: {
-            tableName: 'roles'
+            tableName: 'category'
           },
           key: 'id'
         }
@@ -54,7 +51,6 @@ module.exports = {
   
     });
   },
-  
 
   async down (queryInterface, Sequelize) {
     /**
@@ -63,6 +59,6 @@ module.exports = {
      * Example:
      * await queryInterface.dropTable('users');
      */
-    await queryInterface.dropTable('users');
+     await queryInterface.dropTable('products');
   }
 };

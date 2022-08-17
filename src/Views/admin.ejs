@@ -27,6 +27,7 @@
               </thead>
               <tbody>
                 <% productDataBase.forEach(productDataBase=> { %>
+              
             
                   <tr>
                     <td>
@@ -35,6 +36,7 @@
                     <td>
                       <%= productDataBase.name%>
                     </td>
+                    
                   
                     <td><a href="/admin/detail/<%= productDataBase.id%> ">
                         <ion-icon name="eye-outline"></ion-icon>
@@ -47,13 +49,19 @@
                       </a></td>
                   </tr>
                   <br>
-                  <% }); %>
+                
+                  <% }); %> 
+                  <hr/>
               </tbody>
+              
             </table>
+            
           </article>
+          <hr/>
         </section>
         <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
     </main>
+   
     
   </body>
   <%- include('./partials/footer.ejs') %>

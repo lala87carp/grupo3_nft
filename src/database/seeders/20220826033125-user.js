@@ -13,8 +13,25 @@ module.exports = {
     */
      await queryInterface.bulkInsert('users', [
       {
-         
+        name: {
+          
+        },
+        email: {
         
+        },
+        password: {
+         
+        },
+        
+          image: { 
+            
+  
+        },
+        birthday:{
+          
+  
+        },
+
          }
         ], {});
    

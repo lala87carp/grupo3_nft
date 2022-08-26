@@ -13,16 +13,16 @@ module.exports = {
     */
     await queryInterface.bulkInsert('category', [
       {
-        name: '',
+        name: 'Más comprados',
       },
       {
-        name: '',
+        name: 'Últimos días',
       },
       {
-        name: '',
+        name: 'Últimos agregados',
       },
       {
-        name: '',
+        name: 'premium',
       }
 
 

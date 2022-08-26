@@ -6,7 +6,9 @@ const { body } = require('express-validator');
 
 const cartController = require("../controllers/cartControllers");
 const usersControllers = require("../controllers/usersControllers");
-const userControllersLM = require('../controllers/userControllersLM')
+const loginControllers= require("../controllers/loginControllers");
+const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware')
 
 
 const storage = multer.diskStorage({
@@ -21,16 +23,13 @@ const storage = multer.diskStorage({
 const upload = multer({ storage })
 
 
-
-
-
 router.get("/productCart", cartController.cart);
-router.get("/register", usersControllers.index);
+router.get("/register", guestMiddleware, usersControllers.index);
+router.get('profile', authMiddleware, loginControllers.profile);
+router.get('/login', loginControllers.loginProcess)
+router.get('/logout', loginControllers.logout)
 router.post("/register", upload.single('image'), usersControllers.create);
-
-
-
-
+router.post('/login', guestMiddleware, loginControllers.loginProcess);
 
 
 

@@ -8,6 +8,11 @@ const userRouter = require ("./routes/userRouter");
 const adminRouter = require ("./routes/adminRouter");
 const fs = require('fs');
 const methodOverride = require('method-override');
+const { Session } = require("session/lib/session");
+const guestMiddleware = require('./middlewares/guestMiddleware');
+const authMiddleware = require('./middlewares/authMiddleware');
+const loggedMiddleware = require('./middlewares/loggedMiddleware')
+const cookies = require('cookie-parser')
 
 
 const app = express();
@@ -29,6 +34,12 @@ app.use("/",mainRouter);
 app.use("/product",productRouter);
 app.use("/user", userRouter);
 app.use("/admin", adminRouter);
+app.use(Session({
+    secret: 'It is a secret',
+    resave: false,
+    saveUninitialized: false
+}))
+app.use(cookies())
 
 app.use((req,res,next)=>{
     res.status(404).render('not-found')

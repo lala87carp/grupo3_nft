@@ -1,5 +1,4 @@
 
-
 module.exports = (sequelize,dataTypes) => {
     let alias = 'User';
     let cols = {
@@ -21,21 +20,21 @@ module.exports = (sequelize,dataTypes) => {
             allowNull: false
           },
           
-            image: { 
+          image: { 
               type: dataTypes.STRING(255),
               allowNull: true 
     
           },
           birthday:{
             type: dataTypes.DATE
-    
           },
     
     };
+
     let config = {
         tableName: 'users',
         timestamps: false
-    }
+    };
 
     const User = sequelize.define(alias, cols, config)
 
@@ -44,7 +43,8 @@ module.exports = (sequelize,dataTypes) => {
           as:  'role',
           foreignKey: 'roles_id'
         });
-    }
+
+    };
   
     return User
-  }
+  };

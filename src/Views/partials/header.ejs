@@ -1,6 +1,6 @@
 <header>
     <section class="barra-logo">
-        
+        <% if (locals.isLogged) { %> 
         <div class="menu-hamburguesa">
         <i class="fas fa-bars"></i>
         </div>
@@ -15,6 +15,25 @@
             <a href="/admin">
                 <i class="fas fa-user-cog"></i>
             </a>
+
+        <% } else { % >
+
+                <div class="menu-hamburguesa">
+        <i class="fas fa-bars"></i>
+        </div>
+        
+        <div class="logo">
+            <a href="/">
+            <img src="/images/logo_NFT-logo.png">
+          </a>
+        </div>
+        
+        <div class="iconos-barra-logo">
+            <a href="/admin">
+                <i class="fas fa-user-cog"></i>
+            </a>
+
+
             <a href="/login">
                 <i class="fas fa-user" ></i>
             </a>

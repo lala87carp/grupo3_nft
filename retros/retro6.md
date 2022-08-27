@@ -2,7 +2,7 @@
 
 ## Punto de Partida:
 
-- seguimos con tareas atrazadas y falta de organización. 
+- Seguimos con tareas atrasadas y falta de organización. 
 
 ### Start doing
 

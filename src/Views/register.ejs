@@ -16,7 +16,7 @@
                 <div class="user-info">
                   <form action="/user/register" method="post" enctype='multipart/form-data' class="login-form">
                     
-                    <label for="name">Nombre</label>
+                    <label for="name" class="titulos-register">Nombre</label>
                     <input name="name" type="text" class="login-input" required placeholder="Nombre" minlength="4" > 
                     <% if (locals.errors && errors.name) { %>
                       <div class="text-danger">
@@ -25,31 +25,31 @@
                       <% } %>
                       
                     <br>
-                    <label for="surname">Apellido</label>
+                    <label for="surname" class="titulos-register">Apellido</label>
                     <input name="surname" type="text" class="login-input" required placeholder="Apellido"
                       minlength="3" />
                     <br>
-                    <label for="date">Fecha de nacimiento</label>
+                    <label for="date" class="titulos-register">Fecha de nacimiento</label>
                     <input name="date" type="date" class="login-input" required />
                     <br>
-                    <label for="username">Usuario</label>
+                    <label for="username" class="titulos-register">Usuario</label>
                     <input name="username" type="text" class="login-input" required placeholder="Nombre de usuario"
                       minlength="5" />
                     <br>
-                    <label for="email">Email</label>
-                    <i class="fa fa-envelope icon"></i><input name="email" type="email" class="login-input" required
+                    <label for="email"class="titulos-register">Email</label>
+                    <i class="fa fa-envelope icon" ></i><input name="email" type="email" class="login-input" required
                       placeholder="E-mail" />
                     <br>
-                    <label for="psw">Contraseña</label>
+                    <label for="psw"class="titulos-register">Contraseña</label>
                     <input name="password" type="password" class="login-input" required minlength="5"
                       placeholder="Contraseña" />
                     <br>
-                    <label for="psw2">Repetir Contraseña</label>
+                    <label for="psw2"class="titulos-register"><b>Repetir Contraseña</b></label>
                     <input type="password" class="login-input" required minlength="5"
                       placeholder="Repetir contraseña" />
                     <br>
                     <div class="user-img">
-                      <label class="header">Foto de perfil:</label>
+                      <label class="header"class="titulos-register">Foto de perfil:</label>
                       <div class="foto-perfil"></div>
                       <input type="file" name="image" placeholder="Foto de perfil" capture>
                     </div>

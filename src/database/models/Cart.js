@@ -30,7 +30,7 @@ module.exports = (sequelize, dataTypes) => {
         tableName: 'carts',
         timestamps: false
     };
-    const Role = sequelize.define(alias, cols, config)
+    const Cart = sequelize.define(alias, cols, config)
 
     Cart.associate = function(models) {
         Cart.belongsTo(models.User, {

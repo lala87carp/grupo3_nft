@@ -8,10 +8,10 @@ const userRouter = require ("./routes/userRouter");
 const adminRouter = require ("./routes/adminRouter");
 const fs = require('fs');
 const methodOverride = require('method-override');
-const { Session } = require("session/lib/session");
+const session = require("express-session");
 const guestMiddleware = require('./middlewares/guestMiddleware');
 const authMiddleware = require('./middlewares/authMiddleware');
-const loggedMiddleware = require('./middlewares/loggedMiddleware')
+const loggedMiddleware = require('./middlewares/userLoggedMiddleware')
 const cookies = require('cookie-parser')
 
 
@@ -34,7 +34,7 @@ app.use("/",mainRouter);
 app.use("/product",productRouter);
 app.use("/user", userRouter);
 app.use("/admin", adminRouter);
-app.use(Session({
+app.use(session({
     secret: 'It is a secret',
     resave: false,
     saveUninitialized: false

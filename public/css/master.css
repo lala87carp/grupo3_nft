@@ -266,13 +266,13 @@ header {
 }
 
 
-.login {
+.login, .register-body{
     width: 100%;
     padding: 8% 0 0;
     margin: auto;
   }
 
-  .form input {
+  .form input, .login-input {
     outline: 0;
     background: #fff;
     width: 80%;
@@ -280,29 +280,40 @@ header {
     margin: 0 0 15px;
     padding: 15px;
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: 18px;
     
   }
-  .form button {
+  .form button, .login-button {
     text-transform: uppercase;
     outline: 0;
     background: #193b55;
-    width: 100%;
+    width: 80%;
     border: 0;
     padding: 15px;
     color: #FFFFFF;
-    font-size: 14px;
+    font-size: 18px;
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;
   }
+
+  .titulos-register {
+    font-size: 24px;
+    font-weight: bolder;
+  }
+  .fa-envelope {
+    width: larger;
+    color: #102636;
+
+  }
+
   .form button:hover,.form button:active,.form button:focus {
     background: #193b55;
   }
   .form .message {
     margin: 15px 0 0;
     color: #b3b3b3;
-    font-size: 12px;
+    font-size: 18px;
   }
   .form .message a {
     color: #2c638d;
@@ -318,11 +329,10 @@ header {
     margin: 0 auto;
   }
   
-  .login-form {
+  .login-form  {
       display: flex;
-      flex-direction: column;
+      flex-direction:column;
       justify-content: center;
-      align-items: center;
       padding-bottom: 50px;
   }
 
@@ -581,6 +591,7 @@ main {
     padding: 8% 0 0;
     margin: auto;
 }
+
 .form {
   position: relative;
   z-index: 1;
@@ -600,8 +611,9 @@ main {
   margin: 0 0 15px;
   padding: 15px;
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: 24px;
 }
+
 .form button {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
@@ -628,9 +640,7 @@ main {
   color: #2c638d;
   text-decoration: none;
 }
-.form .registro-form {
-  display: none;
-}
+
 .container {
   position: relative;
   z-index: 1;
@@ -720,6 +730,5 @@ main {
     padding-top: 5px;
 }
 
-
-
 }
+

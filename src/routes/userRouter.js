@@ -5,8 +5,7 @@ const router = express.Router();
 const { body } = require('express-validator');
 
 const cartController = require("../controllers/cartControllers");
-const usersControllers = require("../controllers/usersControllers");
-const loginControllers= require("../controllers/loginControllers");
+const usersController = require("../controllers/usersControllers");
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware')
 
@@ -24,12 +23,12 @@ const upload = multer({ storage })
 
 
 router.get("/productCart", cartController.cart);
-router.get("/register", guestMiddleware, usersControllers.index);
-router.get('profile', authMiddleware, loginControllers.profile);
-router.get('/login', loginControllers.loginProcess)
-router.get('/logout', loginControllers.logout)
-router.post("/register", upload.single('image'), usersControllers.create);
-router.post('/login', guestMiddleware, loginControllers.loginProcess);
+router.get("/register", guestMiddleware, usersController.index);
+router.get('profile', authMiddleware, usersController.profile);
+router.get('/login', usersController.login)
+router.get('/logout', usersController.logout)
+router.post("/register", upload.single('image'), usersController.create);
+router.post('/login', guestMiddleware, usersController.loginProcess);
 
 
 

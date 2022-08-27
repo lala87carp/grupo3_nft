@@ -59,10 +59,3 @@ module.exports = user; //exporto la funcionalidad del modelo y la requiero en el
 
 
 
-
-
-
-
-
-
-}

@@ -1,7 +1,7 @@
 # Retrospectiva - Sprint 5
 
 ## Punto de Partida:
-- llegamos a este sprint bastante desmotivados y habiendo acumulado muchas tareas, pero con animo de salir adelante 
+- Llegamos a este sprint bastante desmotivados y habiendo acumulado muchas tareas, pero con animo de salir adelante.
 
 ### Start doing
 

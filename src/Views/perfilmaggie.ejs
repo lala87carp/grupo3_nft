@@ -1,0 +1,26 @@
+
+      <!-- Container -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <h2>Bienvenido a Tecno Fan! <%= user.name_and_surname%>
+            </h2>
+            <div class="avatar">
+              <img src="/img/avatars/<%= user.image %>">
+            </div>
+            <br>
+            <br>
+            <div class="alert alert-success">
+              <h2>Tu correo es <%= user.email %>
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //Container -->
+
+      <%- include('./partials/footer') %>
+  </body>
+
+</html>
+Footer

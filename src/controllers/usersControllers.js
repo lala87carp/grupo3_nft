@@ -12,6 +12,16 @@ const controller = {
 
     create: async (req, res) => {
         try {
+            if (!req.files?.filename || !req.body.email || !req.body.password || !req.body.name) {
+                return res.render('register', {
+                    errors: {
+                        file: {
+                            msg: 'Faltan enviar campos requeridos'
+                        }
+                    }
+                })
+            }
+
             await db.User.create({
                 ...req.body,
                 password: bcrypt.hashSync(req.body.password, 10),
@@ -86,7 +96,7 @@ const controller = {
     profile: async (req, res) => {
         return res.render('userProfile', {
             user: req.session.user
-          })
+        })
     },
 
     logout: (req, res) => {

@@ -18,11 +18,6 @@
                     
                     <label for="name" class="titulos-register">Nombre</label>
                     <input name="name" type="text" class="login-input" required placeholder="Nombre" minlength="4" > 
-                    <% if (locals.errors && errors.name) { %>
-                      <div class="text-danger">
-                        <% errors.name.msg %> 
-                      </div>
-                      <% } %>
                       
                     <br>
                     <label for="surname" class="titulos-register">Apellido</label>

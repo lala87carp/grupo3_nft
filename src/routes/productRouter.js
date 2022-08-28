@@ -3,11 +3,7 @@ const router = express.Router();
 const path = require('path');
 const multer = require('multer');
 
-
-
-
-const productController = require("../controllers/productsController");
-const productCreateController = require("../controllers/productCreateController");
+const controller = require("../controllers/productsController");
 
 
 // donde voy a guardar imagenes de los productos
@@ -24,12 +20,21 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage })
 
-router.get("/productDetail", productController.detail);
+/* router.get("/productDetail", productController.detail);
 router.get("/productCreateForm", productCreateController.index);
 router.post("/productCreateForm", upload.single('image'), productCreateController.create);
 router.get("/edit/:id", productCreateController.edit);
 router.put("/edit/:id",upload.single('image'), productCreateController.put);
-router.get("/delete/:id",productCreateController.destroy);
+router.get("/delete/:id",productCreateController.destroy); */
+
+router.get('/', controller.find);
+router.get('/:id', controller.findOne);
+router.get('/create', controller.createForm);
+router.get('/update', controller.updateForm);
+router.post('/', upload.single('image') , controller.create);
+router.put('/:id',  upload.single('image'), controller.update);
+router.delete('/:id', controller.delete)
+
 module.exports = router;
 
 

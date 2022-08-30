@@ -4,15 +4,8 @@
     <%- include('./partials/header') %>
 
       <main class="register-body">
-        <% if (locals.errors) { %>
-
-          <% for( let oneError in errors) { %>
-            <p>
-              <%= errors [oneError].msg %>
+       
             </p>
-            <% } %>
-              <% } %>
-
                 <div class="user-info">
                   <form action="/user/register" method="post" enctype='multipart/form-data' class="login-form">
                     

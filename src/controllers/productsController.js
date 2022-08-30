@@ -1,3 +1,5 @@
+const path = require('path');
+const fs = require('fs');
 const db = require('../database/models');
 const { validationResult } = require('express-validator');
 
@@ -9,7 +11,7 @@ const controller = {
         res.render("productCreateForm")
     },
     updateForm: (req, res) => {
-        res.render("productUpdateForm")
+        res.render("edit")
     },
      
     create: async (req, res) => {
@@ -35,8 +37,8 @@ const controller = {
     },
     find: async (req, res) => {
         const products = await db.Product.findAll()
-        //tengo que hacer vista
-        res.render('products', { products });
+        
+        res.render('./admin', { products });
     },
     findOne: async (req, res) => {
         const { id } = req.params;
@@ -82,7 +84,7 @@ const controller = {
             res.redirect('/');
         } catch (error) {
             if(error.name === /* TODO Verificar nombre del error */'SequielizeNotFoundException') {
-                return res.render('productUpdateForm', { errors: {
+                return res.render('edit', { errors: {
                     msg: 'El producto que intentas borrar no existe'
                 }})
             }

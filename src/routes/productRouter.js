@@ -31,9 +31,10 @@ router.get('/', controller.find);
 router.get('/:id', controller.findOne);
 router.get('/create', controller.createForm);
 router.get('/update', controller.updateForm);
+router.get("/productDetail", controller.detail);
 router.post('/', upload.single('image') , controller.create);
 router.put('/:id',  upload.single('image'), controller.update);
-router.delete('/:id', controller.delete)
+router.delete('/:id', controller.delete);
 
 module.exports = router;
 

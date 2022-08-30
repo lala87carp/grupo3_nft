@@ -1,4 +1,5 @@
 const db = require('../database/models');
+const { validationResult } = require('express-validator');
 
 const controller = {
     detail: (req, res) => {
@@ -8,7 +9,7 @@ const controller = {
         res.render("productCreateForm")
     },
     updateForm: (req, res) => {
-        res.render("productUpdateFrom")
+        res.render("productUpdateForm")
     },
      
     create: async (req, res) => {

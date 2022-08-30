@@ -17,12 +17,16 @@ module.exports = {
 
       },
       {
-        email: Tamara
+        email: "Tamara_falcon@gmail.com"
 
       },
       {
 
         birthday: "20/02/1994"
+
+      },
+      {
+        role_id: 1
 
       },
 

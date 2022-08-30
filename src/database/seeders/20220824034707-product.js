@@ -4,8 +4,15 @@ module.exports = {
   async up (queryInterface, Sequelize) {
     await queryInterface.bulkInsert('products', [
       {
-        
-      }
+       name: indias },
+    {
+      price: 240.000},
+    {
+      
+      category: 2},
+    {
+      description: "colección 2019" }
+      
         ], {});
     },
    

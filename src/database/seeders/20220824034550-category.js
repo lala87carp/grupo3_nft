@@ -12,7 +12,7 @@ module.exports = {
      * }], {});
     */
     await queryInterface.bulkInsert('category', [
-      {
+      { 
         name: 'Más comprados',
       },
       {

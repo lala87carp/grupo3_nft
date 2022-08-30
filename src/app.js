@@ -13,6 +13,7 @@ const guestMiddleware = require('./middlewares/guestMiddleware');
 const authMiddleware = require('./middlewares/authMiddleware');
 const loggedMiddleware = require('./middlewares/userLoggedMiddleware')
 const cookies = require('cookie-parser')
+const expressValidator = require('express-validator')
 
 
 const app = express();

@@ -8,14 +8,42 @@ module.exports = {
         price: 40.000,
         category_id: 1,
         description: "colección 2019",
-        autor: "Dell"
+        autor: "Dell",
+        image: "foto-1657502271034.png"
+
       },
       {
-        name: "indias",
-        price: 40.000,
-        category_id: 1,
-        description: "colección 2019",
-        autor: "Dell"
+        name: "pierinas",
+        price: 10.300,
+        category_id: 2,
+        description: "colección pierina",
+        autor: "Main",
+        image:"foto-1657502271034.png"
+      },
+      {
+        name: "monored",
+        price: 50.900,
+        category_id: 3,
+        description: "colección 2017 monoRed",
+        autor: "Billy",
+        image: "foto-1657503602271.pdf"
+      },
+      {
+        name: "limit",
+        price: 88.000,
+        category_id: 2,
+        description: "coleccion apenft",
+        autor: "braian",
+        image: "foto-1657503602271.pdf"
+
+      },
+      {
+        name: "puebla",
+        price: 28.000,
+        category_id: 4,
+        description: "collecion apertura",
+        autor: "Billy",
+        image: "foto-1657503602271.pdf"
       }
 
     ], {});

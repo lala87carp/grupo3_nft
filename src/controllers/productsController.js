@@ -1,9 +1,8 @@
 const path = require('path');
 const fs = require('fs');
 const db = require('../database/models');
-const path = require('path');
 const { validationResult } = require('express-validator');
-const fs = require('fs');
+
 
 
 const controller = {
@@ -11,7 +10,7 @@ const controller = {
         res.render("productDetail")
     },
     createForm: (req, res) => {
-        res.render("/productCreateForm")
+        res.render("productCreateForm")
     },
     updateForm: (req, res) => {
         res.render("edit")

@@ -28,14 +28,11 @@ router.put("/edit/:id",upload.single('image'), productCreateController.put);
 router.get("/delete/:id",productCreateController.destroy); */
 
 router.get('/', controller.find);
-router.get('/:id', controller.findOne);
-
-router.get('/productCreateForm', controller.createForm);
-router.get('/productCreateForm', controller.create)
-
-router.get('/update', controller.updateForm);
-router.get("/productDetail", controller.detail);
+router.get('/detail/:id', controller.findOne);
+router.get('/create', controller.createForm);
+// router.post('/productCreateForm', controller.create)
 router.post('/', upload.single('image') , controller.create);
+router.get('/update', controller.updateForm);
 router.put('/update/:id',  upload.single('image'), controller.update);
 router.delete('/:id', controller.delete);
 

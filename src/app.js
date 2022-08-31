@@ -42,9 +42,9 @@ app.use(session({
 }))
 app.use(cookies())
 
-app.use((req,res,next)=>{
-    res.status(404).render('not-found')
-})
+// app.use((req,res,next)=>{
+//     res.status(404).render('not-found')
+// })
 
 app.listen(3000,() => {
     console.log("servidor corriendo en el puerto 3000");

@@ -14,29 +14,34 @@ const controller = {
 
     create: async (req, res) => {
         try {
-            if (!req.files?.filename || !req.body.email || !req.body.password || !req.body.name) {
+            if ( !req.body.email || !req.body.password || !req.body.name ||!req.body.birthday) {
                 return res.render('register', {
                     errors: {
                         file: {
                             msg: 'Faltan enviar campos requeridos'
                         }
-                    }
+                    },
                 })
+                
+                
             }
-
+            
             await db.User.create({
                 ...req.body,
+
+                name:req.body.name,
+                email:req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),
                 filename: req.file.filename,
-                roles_id: 3
+                roles_id: 2
             });
-            delete userToLogin.password
+
             req.session.user = userToLogin;
+            delete userToLogin.password
             /* TODO mandar remember_user desde el frontend */
             if (req.body.remember_user) {
                 res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })
             }
-            res.redirect('/');
         } catch (error) {
             if (error.name === 'SequelizeUniqueConstraintError') {
                 return res.render('register', {
@@ -56,10 +61,13 @@ const controller = {
                 }
             })
         }
-
+        
+        
+       
     },
-
-
+    
+  
+    
     login: (req, res) => {
         res.render("login")
     },
@@ -104,7 +112,7 @@ const controller = {
     logout: (req, res) => {
         res.clearCookie('userEmail');
         req.session.destroy();
-        return res.redirect('/');
+       
 
     }
 

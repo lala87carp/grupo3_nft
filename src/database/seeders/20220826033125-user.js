@@ -14,35 +14,30 @@ module.exports = {
     */
     await queryInterface.bulkInsert('users', [
       {
-        name: "",
-
-        email: "Tamara_falcon@gmail.com",
-
+        name: "Laura",
+        email: "Laura@gmail.com",
         birthday: "1994/03/22",
-
         roles_id: 1,
-
         password: bcrypt.hashSync("123456",10),
+        image:"foto-1661635509583.jpeg",
 
       },
       {
-        name: "Tamara",
-
-        email: "Tamara_falcon@gmail.com",
-
-        birthday: "1994/03/22",
-
+        name: "Braian",
+        email: "Braian_maynard@hotmail.com",
+        birthday: "1997/07/21",
         roles_id: 1,
-
         password: bcrypt.hashSync("123456",10),
+        image:"foto-1661635509583.jpeg",
 
       },
       {
       name: "Margarita",
       email: "maggie200ar@hotmail.com",
-      password: "$2a$10$EYPpJDpELDUuI4vMotV7TumI/V9P5XaTpY7oorXoDFe.J4lyQkjCe",
+      password: bcrypt.hashSync("123456",10),
       image:"foto-1661635509583.jpeg",
-      birthday:"2008-08-08"
+      birthday:"2008/08/08",
+      roles_id: 1,
       }
 
 

@@ -2,13 +2,18 @@
 <html lang="en">
     <%- include('./partials/head') %>
     <body>
-        <%- include('./partials/header') %>
+        <% if (<!-- userLogged && userLogged.rol_id == "1") --> { %>                   
+			<%- include ('../partials/adminHeader') %>
+		<% } else { %>
+		  <%- include ('../partials/header') %> 
+		<% } %>
+
         <div >
             <div >
                 <div >
-                    <h2>Hola <%= userDataBase.name %> </h2>
+                    <h2>Hola <%= user.name %> </h2>
                     <div class="foto-perfil">
-                    <img src="/img/usersImg/<%= userDataBase.image %> ">
+                    <img src="/image<%= user.image %> ">
                     </div>
                     <br>
                     <br>
@@ -21,5 +26,8 @@
 </html>
 
 
+
+		
+	
 	
 	

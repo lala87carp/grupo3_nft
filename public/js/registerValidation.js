@@ -4,17 +4,20 @@ window.addEventListener("load", function () {
     let formulario = document.querySelector("form.reservation"); //chequear nombre
     formulario.addEventListener("submit", function (e) {
         e.preventDefault();
+
+        let errores = []
+
         let campoNombre = document.querySelector("input.name");
         if (campoNombre.value == " ") {
-            alert("el campo de nombre tiene que estar completo")
+            errores.push("el campo de nombre tiene que estar completo")
         } else if (campoNombre.value.length < 3) {
-            alert("El campo de nombre debe tener al menos 3 caracteres");
+            errores.push("El campo de nombre debe tener al menos 3 caracteres");
         }
         let surname = document.querySelector("input.surname");
         if (surname.value == " ") {
-            alert("El campo de apellido tiene que estar completo")
+            errores.push("El campo de apellido tiene que estar completo")
         } else if (surname.value.length < 2) {
-            alert("El campo de apellido debe tener al menos 2 caracteres");
+            errores.push("El campo de apellido debe tener al menos 2 caracteres");
         
         }
         const validateEmail = (email) => {
@@ -25,18 +28,29 @@ window.addEventListener("load", function () {
               );
           };
           if( !validateEmail.test(email.value) ){
-            alert("el email no es un formato valido")
+            errores.push("el email no es un formato valido")
           };
         
         let password = document.querySelector("input.password")
         if (password.value.length < 8) {
-            alert("La contraseña debe tener entre 8 y 10 caracteres");
+            errores.push("La contraseña debe tener entre 8 y 10 caracteres");
         };
         if (password.value == "") {
-            alert("La contraseña no puede estar vacia");
+            errores.push("La contraseña no puede estar vacia");
         }; 
+
+        if (errores.length > 0) {
+            e.preventDefault();
+
+            let erroresUl = document.querySelector("div.errores ul");
+            erroresUl.innerHTML = "";
+            for (let i = 0; i < errores.length; i++) {
+                erroresUl.innerHTML += "<li>" + errores[i] + "</li>";
+            };
+        };
     });
-    })
+    });
+
 
 
 

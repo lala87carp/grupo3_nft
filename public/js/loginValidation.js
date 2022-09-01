@@ -7,9 +7,11 @@ window.addEventListener("load", function () {
     let formulario = document.querySelector("form.reservation"); //chequear nombre
     formulario.addEventListener("submit", function (e) {
         e.preventDefault();
-        
+
+        let errores = []
+
         if (email.value == " ") {
-            alert("El campo de usuario tiene que estar completo")
+            errores.push("El campo de usuario tiene que estar completo")
         } 
         const validateEmail = (email) => {
             return String(email)
@@ -19,12 +21,21 @@ window.addEventListener("load", function () {
               );
           };
           if( !validateEmail.test(email.value) ){
-            alert("el email no es un formato valido")
+            errores.push("el email no es un formato valido")
           };
         
         if (password.value == "") {
-            alert("La contraseña no puede estar vacia");
+            errores.push("La contraseña no puede estar vacia");
         }; 
+        if (errores.length > 0) {
+            e.preventDefault();
+
+            let erroresUl = document.querySelector("div.errores ul");
+            erroresUl.innerHTML = "";
+            for (let i = 0; i < errores.length; i++) {
+                erroresUl.innerHTML += "<li>" + errores[i] + "</li>";
+            };
+        };
     });
     })
 

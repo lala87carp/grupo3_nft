@@ -30,12 +30,12 @@ router.get("/delete/:id",productCreateController.destroy); */
 router.get('/', controller.find);
 router.get('/detail/:id', controller.findOne);
 router.get('/create', controller.createForm);
-// router.post('/productCreateForm', controller.create)
-router.post('/', upload.single('image') , controller.create);
+router.post('/create', upload.single('image') , controller.create);
 router.get('/update', controller.updateForm);
 router.put('/update/:id',  upload.single('image'), controller.update);
 router.delete('/:id', controller.delete);
 
+// router.post('/productCreateForm', controller.create)
 
 
 module.exports = router;

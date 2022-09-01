@@ -16,9 +16,9 @@ const controller = {
         res.render("edit")
     },
      
-    create: async (req, res) => {
-        const { name, price, autor } = req.body;
-        if (!name || !price || !autor) {
+    create: async (req, res) => { 
+        const { name, price, autor,category_id } = req.body;
+        if (!name || !price || !autor || !category_id) {
             return res.render('productCreateForm', {
                 errors: {
                     msg: `Faltan los campos requeridos: ${
@@ -29,13 +29,14 @@ const controller = {
                 }
             })
         }
-        const newProduct = { ...req.body }
+        console.log(req.files)
+        const newProduct = { ...req.body, category_id:Number(category_id) }
         if(req.files?.filename) {
             newProduct.image = req.files.filename
         }
         const product = await db.Product.create(newProduct);
 
-        res.redirect(`/productDetail/${product.id}`)
+        res.redirect(`/product/detail/${product.id}`)
     },
     find: async (req, res) => {
         const products = await db.Product.findAll()

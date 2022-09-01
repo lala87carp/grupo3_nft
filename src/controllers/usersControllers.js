@@ -2,11 +2,12 @@ const path = require('path');
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
-const db = require('../database/models')
+const db = require('../database/models');
 
 
 
 const controller = {
+    
     index: (req, res) => {
         let userDataBase = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../Data/userDataBase.json')));
         res.render(path.resolve(__dirname, '../views/register'));
@@ -36,8 +37,8 @@ const controller = {
                 roles_id: 2
             });
 
-            req.session.user = userToLogin;
             delete userToLogin.password
+            req.session.user = userToLogin;
             /* TODO mandar remember_user desde el frontend */
             if (req.body.remember_user) {
                 res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })

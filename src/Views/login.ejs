@@ -1,29 +1,23 @@
-
 <%- include('./partials/head') %>
 
-<body>
+  <body>
     <%- include('./partials/header') %>
 
-    <main>
+      <main>
         <div class="login">
-            <div class="form">
-              <!-- <form  class="registro-form">
-                <input type="text" placeholder="name"/>
-                <input type="password" placeholder="password"/>
-                <input type="text" placeholder="email address"/>
-                <button>Crear</button>
-                <p class="message">¿No estas registrado? <a href="#">Iniciar Sesión</a></p>
-              </form> -->
-              <form action="/user/login" method="post" enctype='multipart/form-data'class="login-form">
-                <input type="text" placeholder="Usuario"/>
-                <input type="password" placeholder="Contraseña"/>
-                <button>Iniciar Sesión</button>
-                <p class="message">¿No estas registrado?<a href="/register">Crear una cuenta</a></p>
-              </form>
-            </div>
+          <div class="form">
+
+            <form action="/user/login" method="post" enctype='multipart/form-data' class="login-form">
+              <input type="text" placeholder="Usuario" />
+              <input type="password" placeholder="Contraseña" />
+              <button>Iniciar Sesión</button>
+              <p class="message">¿No estas registrado?<a href="/register">Crear una cuenta</a></p>
+            </form>
           </div>
+        </div>
       </main>
 
       <%- include('./partials/footer') %>
-</body>
-</html>
+  </body>
+
+  </html>

@@ -18,7 +18,7 @@ const controller = {
      
     create: async (req, res) => { 
         const { name, price, autor, category_id } = req.body;
-        if (!name || !price || !autor || !category_id) {
+        if (!name || !price || !autor || !category_id ) {
             return res.render('productCreateForm', {
                 errors: {
                     msg: `Faltan los campos requeridos: ${
@@ -31,8 +31,8 @@ const controller = {
         }
         const newProduct = { ...req.body, category_id: Number(category_id) }
 
-        if(req.files?.filename) {
-            newProduct.image = req.files.filename
+        if(req.file?.filename) {
+            newProduct.image = req.file.filename
             
         }
         const product = await db.Product.create(newProduct);

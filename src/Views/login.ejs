@@ -5,18 +5,18 @@
     <%- include('./partials/header') %>
 
     <main>
-        <div class="login">
+        <div class="login" >
             <div class="form">
               <form class="registro-form">
-                <input type="text" placeholder="name"/>
-                <input type="password" placeholder="password"/>
-                <input type="text" placeholder="email address"/>
+                <!-- <input type="text" placeholder="name"/>
+                <input type="password" placeholder="password" />
+                <input type="text" placeholder="email address" />
                 <button>Crear</button>
-                <p class="message">¿No estas registrado? <a href="#">Iniciar Sesión</a></p>
+                <p class="message">¿No estas registrado? <a href="#">Iniciar Sesión</a></p> -->
               </form>
-              <form class="login-form">
-                <input type="text" placeholder="Usuario"/>
-                <input type="password" placeholder="Contraseña"/>
+              <form class="login-form" id="loginForm">
+                <input type="text" placeholder="Usuario" id="loginEmail"/>
+                <input type="password" placeholder="Contraseña" id="loginPassword"/>
                 <button>Iniciar Sesión</button>
                 <p class="message">¿No estas registrado?<a href="/register">Crear una cuenta</a></p>
               </form>

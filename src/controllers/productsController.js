@@ -30,8 +30,10 @@ const controller = {
             })
         }
         const newProduct = { ...req.body, category_id: Number(category_id) }
+
         if(req.files?.filename) {
             newProduct.image = req.files.filename
+            
         }
         const product = await db.Product.create(newProduct);
 
@@ -46,7 +48,7 @@ const controller = {
         const { id } = req.params;
         const product = await db.Product.findOne({ where: { id } });
         
-        if(!product) return res.redirect('/404');
+        if(!product) return res.redirect('/not-found');
 
         return res.render('productDetail', { product });
     },

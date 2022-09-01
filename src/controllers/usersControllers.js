@@ -63,7 +63,7 @@ const controller = {
             })
         }
         
-        
+        return res.redirect('perfilmaggie')
        
     },
     
@@ -100,7 +100,7 @@ const controller = {
         if (req.body.remember_user) {
             res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })
         }
-        return res.redirect('/user/profile')
+        return res.redirect('perfilmaggie')
 
     },
 

@@ -33,7 +33,7 @@ const controller = {
                 name:req.body.name,
                 email:req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),
-                filename: req.file.filename,
+                image: req.file.filename,
                 roles_id: 2
             });
 
@@ -63,7 +63,7 @@ const controller = {
             })
         }
         
-        return res.redirect('perfilmaggie')
+        // return res.redirect('perfilmaggie')
        
     },
     

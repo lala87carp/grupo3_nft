@@ -17,20 +17,19 @@ const controller = {
     },
      
     create: async (req, res) => { 
-        const { name, price, autor,category_id } = req.body;
+        const { name, price, autor, category_id } = req.body;
         if (!name || !price || !autor || !category_id) {
             return res.render('productCreateForm', {
                 errors: {
                     msg: `Faltan los campos requeridos: ${
-                        ['name', 'price', 'autor']
+                        ['name', 'price', 'autor', 'category_id']
                             .filter(field => !req.body[field])
                             .join(', ')
                     }`
                 }
             })
         }
-        console.log(req.files)
-        const newProduct = { ...req.body, category_id:Number(category_id) }
+        const newProduct = { ...req.body, category_id: Number(category_id) }
         if(req.files?.filename) {
             newProduct.image = req.files.filename
         }
@@ -47,7 +46,7 @@ const controller = {
         const { id } = req.params;
         const product = await db.Product.findOne({ where: { id } });
         
-        if(!product) return res.redirect('404');
+        if(!product) return res.redirect('/404');
 
         return res.render('productDetail', { product });
     },

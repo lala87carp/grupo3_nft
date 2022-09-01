@@ -5,16 +5,15 @@
     
     <main>
         <section class="contenedor-producto">
-            <h2>Saint Ape</h2><br>
+            <h2><%= product.name %></h2><br>
             <div class="detalle-producto">
-                <div class="foto-producto"><img src="/images/nuevas-obras-01.jpg"></div>
+                <div class="foto-producto"><img src="/images/productImg/<%= product.image %>"></div>
                 <div class="detalle-producto">
-                    <br><h3>Saint Ape</h3><br>
+                    <br><h3><%= product.name %></h3><br>
                     <h4>Detalle del producto</h4>
-                    <p>Collección Ape</p>
-                    <p>Valuado en 0.05 ETH</p><br>
-                    <p>Apes inspiran celos entre aquellos<br> que tienen e intercambian NFT, <br>
-                        pero confusion y suspenso entre aquellos <br>que no y quieren entrar al mundo NFT.
+                    <p><%= product.autor %></p>
+                    <p>Valuado en <%= product.price %> ETH</p><br>
+                    <p><%= product.description %>
                     </p>
                 </div>
                 <div class="botonera-producto">

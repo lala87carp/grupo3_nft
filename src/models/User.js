@@ -7,7 +7,6 @@ const user = {
 		return JSON.parse(fs.readFileSync(this.fileName, 'utf-8')); //lee el archivo que llamamos mas arriba, en este caso el user.json - por eso lo convierto a un array
 	},
 	
-	//este metodo me permite generar un nuevo ID (que no se hace automatico).
 	generateId: function () {
 		let allUsers = this.findAll();
 		let lastUser = allUsers.pop();//con esto obtengo el ultimo ID, para despues poder sumarle 1 y seguir la correlatividad

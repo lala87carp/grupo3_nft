@@ -30,19 +30,13 @@ const controller = {
             await db.User.create({
                 ...req.body,
 
-                name:req.body.name,
-                email:req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),
                 image: req.file.filename,
                 roles_id: 2
             });
+            return res.redirec("login")
 
-            delete userToLogin.password
-            req.session.user = userToLogin;
-            /* TODO mandar remember_user desde el frontend */
-            if (req.body.remember_user) {
-                res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })
-            }
+           
         } catch (error) {
             if (error.name === 'SequelizeUniqueConstraintError') {
                 return res.render('register', {
@@ -63,11 +57,11 @@ const controller = {
             })
         }
         
-        // return res.redirect('perfilmaggie')
-       
     },
     
-  
+ 
+    
+    
     
     login: (req, res) => {
         res.render("login")
@@ -75,6 +69,7 @@ const controller = {
 
 
     loginProcess: async (req, res) => {
+        console.log(req.body)
         const user = await db.User.findOne({ where: { email: req.body.email } })
 
         if (!user) return res.render('userLoginForm', {
@@ -84,11 +79,13 @@ const controller = {
                 }
             }
         });
+       
         const passwordsMatch = bcrypt.compareSync(
             req.body.password,
             user.password
         );
-        if (!passwordsMatch) return res.render('userLoginForm', {
+        
+        if (!passwordsMatch) return res.render('login', {
             errors: {
                 email: {
                     msg: 'Usuario o contraseña incorrectos'
@@ -96,16 +93,16 @@ const controller = {
             }
         })
         delete user.password
-        req.session.user = user;
+        req.session.userLogged = user;
         if (req.body.remember_user) {
             res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })
         }
-        return res.redirect('/')
+        return res.redirect("/")
 
     },
 
     profile: async (req, res) => {
-        return res.render('userProfile', {
+        return res.render('profile', {
             user: req.session.user
         })
     },

@@ -3,39 +3,16 @@
   <body>
     <%- include('./partials/header') %>
 
-<<<<<<< HEAD
-    <main>
-        <div class="login" >
-          <div class="errores">
-            <ul></ul>
-          </div>
-            <div class="form">
-              <form class="registro-form">
-                <!-- <input type="text" placeholder="name"/>
-                <input type="password" placeholder="password" />
-                <input type="text" placeholder="email address" />
-                <button>Crear</button>
-                <p class="message">¿No estas registrado? <a href="#">Iniciar Sesión</a></p> -->
-              </form>
-              <form class="login-form" id="loginForm">
-                <input type="text" placeholder="Usuario" id="loginEmail"/>
-                <input type="password" placeholder="Contraseña" id="loginPassword"/>
-                <button>Iniciar Sesión</button>
-                <p class="message">¿No estas registrado?<a href="/register">Crear una cuenta</a></p>
-              </form>
-            </div>
-=======
       <main>
         <div class="login">
           <div class="form">
 
-            <form action="/user/login" method="post" enctype='multipart/form-data' class="login-form">
-              <input type="text" placeholder="Usuario" />
-              <input type="password" placeholder="Contraseña" />
-              <button>Iniciar Sesión</button>
+            <form action="/user/login" method="post"  class="login-form">
+              <input type="text" placeholder="Usuario"  name="email"/>
+              <input type="password" placeholder="Contraseña" name="password"/>
+              <button type="submit">Iniciar Sesión</button>
               <p class="message">¿No estas registrado?<a href="/register">Crear una cuenta</a></p>
             </form>
->>>>>>> 0c951288d9361033f98583d3f4326d347a441f49
           </div>
         </div>
       </main>

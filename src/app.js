@@ -1,20 +1,20 @@
 const express = require ("express");
 const path = require ("path");
-
+const cookies = require('cookie-parser')
+const expressValidator = require('express-validator')
+const fs = require('fs');
+const session = require("express-session");
+const methodOverride = require('method-override');
 const multer = require('multer');
+
+
 const productRouter = require ("./routes/productRouter");
 const mainRouter = require ("./routes/mainRouter");
 const userRouter = require ("./routes/userRouter");
 const adminRouter = require ("./routes/adminRouter");
-const fs = require('fs');
-const methodOverride = require('method-override');
-const session = require("express-session");
-const guestMiddleware = require('./middlewares/guestMiddleware');
+const guestMiddleware = require("./middlewares/guestMiddleware");
 const authMiddleware = require('./middlewares/authMiddleware');
-const loggedMiddleware = require('./middlewares/userLoggedMiddleware')
-const cookies = require('cookie-parser')
-const expressValidator = require('express-validator')
-
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 
 const app = express();
 
@@ -42,9 +42,13 @@ app.use(session({
 }))
 app.use(cookies())
 
-// app.use((req,res,next)=>{
-//     res.status(404).render('not-found')
-// })
+app.use(guestMiddleware);
+app.use(authMiddleware);
+app.use(userLoggedMiddleware);
+
+app.use((req,res,next)=>{
+    res.status(404).render('not-found')
+})
 
 app.listen(3000,() => {
     console.log("servidor corriendo en el puerto 3000");

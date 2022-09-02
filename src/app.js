@@ -8,6 +8,7 @@ const methodOverride = require('method-override');
 const multer = require('multer');
 
 
+
 const productRouter = require ("./routes/productRouter");
 const mainRouter = require ("./routes/mainRouter");
 const userRouter = require ("./routes/userRouter");
@@ -17,6 +18,12 @@ const authMiddleware = require('./middlewares/authMiddleware');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 
 const app = express();
+app.use(session({
+    secret: 'It is a secret',
+    resave: false,
+    saveUninitialized:true
+}))
+app.use(cookies())
 
 app.use ( methodOverride ('_method') );
 
@@ -35,12 +42,6 @@ app.use("/",mainRouter);
 app.use("/product",productRouter);
 app.use("/user", userRouter);
 app.use("/admin", adminRouter);
-app.use(session({
-    secret: 'It is a secret',
-    resave: false,
-    saveUninitialized: false
-}))
-app.use(cookies())
 
 app.use(guestMiddleware);
 app.use(authMiddleware);

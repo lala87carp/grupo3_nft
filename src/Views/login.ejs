@@ -7,10 +7,10 @@
         <div class="login">
           <div class="form">
 
-            <form action="/user/login" method="post" enctype='multipart/form-data' class="login-form">
-              <input type="text" placeholder="Usuario" />
-              <input type="password" placeholder="Contraseña" />
-              <button>Iniciar Sesión</button>
+            <form action="/user/login" method="post"  class="login-form">
+              <input type="text" placeholder="Usuario"  name="email"/>
+              <input type="password" placeholder="Contraseña" name="password"/>
+              <button type="submit">Iniciar Sesión</button>
               <p class="message">¿No estas registrado?<a href="/register">Crear una cuenta</a></p>
             </form>
           </div>

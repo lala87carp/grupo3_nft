@@ -4,6 +4,7 @@ const path = require('path');
 const multer = require('multer');
 const { body } = require('express-validator');
 const controller = require("../controllers/productsController");
+const userLoggedMiddleware =require('../middlewares/userLoggedMiddleware')
 
 const validateCreateForm =[
     body('name').isLength({min:2}).withMessage('complete el nombre del producto '),
@@ -30,7 +31,7 @@ router.get('/create', controller.createForm);
 router.post('/create', upload.single('image'),controller.create);
 router.get('/update', controller.updateForm);
 router.put('/update/:id',  upload.single('image'), controller.update);
-router.delete('/:id', controller.delete);
+router.delete('delete/:id',userLoggedMiddleware, controller.delete);
 
 // router.post('/productCreateForm', controller.create)
 /* router.get("/productDetail", productController.detail);

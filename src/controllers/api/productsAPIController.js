@@ -28,17 +28,15 @@ const ProductsAPIController = {
     }, {});
 
     const count = await Product.count();
-    const products = await Product.findAll()
+    const products = await Product.findAll({include:['category']})
 
     let respuesta = {
       count,
       countByCategory,
       products: products.map(product => ({
-        id: product.id,
-        name: product.name,
-        description: product.description,
+        ...product.dataValues,
         detail: '/api/products/' + product.id,
-        image: product.image
+        
       }))
     }
     res.json(respuesta);

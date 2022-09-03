@@ -8,7 +8,7 @@ const Users = db.User;
 
 const usersAPIController = {
     'list': (req, res) => {
-        db.User.findAll({attributes:{exclude: ["password"]}})
+        db.User.findAll({include: ['role'], attributes:{exclude: ["password"]}})
         .then(users => {
             const usersData = users.map(user => (
                  {

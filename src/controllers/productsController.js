@@ -85,7 +85,7 @@ const controller = {
         const { id } = req.params;
         try {
             await db.Product.destroy({ where: id });
-            res.redirect('/');
+            res.redirect('/admin');
         } catch (error) {
             if(error.name === /* TODO Verificar nombre del error */'SequielizeNotFoundException') {
                 return res.render('edit', { errors: {

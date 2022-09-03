@@ -1,125 +1,202 @@
-
 <%- include('./partials/head') %>
-<body>
-    
-    <%- include('./partials/header') %>
-    <main>
-        <section class="novedades">
-            <section class="carrousel-novedades">
-                <div class="flecha"><i class="fas fa-angle-left"></i></div>
-                <div class="imagen-novedades"><img src="/images/novedades_01_mono.jpg" alt="imagen-nocedades"></div>
-                <div class="flecha"><i class="fas fa-angle-right"></i> </div>
+
+    <body>
+
+        <%- include('./partials/header') %>
+            <main>
+                <section class="novedades">
+                    <section class="carrousel-novedades">
+                        <div class="flecha"><i class="fas fa-angle-left"></i></div>
+                        <div class="imagen-novedades"><img src="/images/novedades_01_mono.jpg" alt="imagen-nocedades">
+                        </div>
+                        <div class="flecha"><i class="fas fa-angle-right"></i> </div>
+                    </section>
+                    <div class="info-novedades">
+                        <div class="texto-novedades">
+                            <p>Explora las diferentes colecciones. Te presentamos el nuevo mercado online de NFT</p>
+                        </div>
+                        <div class="espacio-boton-novedades"><button class="boton-novedades" type="button"
+                                href="/productDetail">VER MÁS</button></div>
+                    </div>
                 </section>
-                <div class="info-novedades">
-                    <div class="texto-novedades"> <p>Explora las diferentes colecciones. Te presentamos el nuevo mercado online de NFT</p></div>
-                    <div class="espacio-boton-novedades"><button class="boton-novedades" type="button" href="/productDetail">VER MÁS</button></div>
-                </div>
-        </section>
-        <section class="novedades-tablet">
-            <div class="flechas-tablet"><i class="fas fa-angle-left"></i></div>
-            <div class="novedades-imagen-tablet"><img src="/images/novedades_01_mono.jpg" alt="imagen-nocedades"></div>
-            <div class="info-novedades-tablet">
-                <div class="info-novedades-tablet-texto"><p>Explora las diferentes colecciones. Te presentamos el nuevo mercado online de NFT</p></div>
-                <div class="info-novedades-tablet-boton"><button class="boton-novedades" type="button" >VER MÁS</button></div>
-            </div>
-            <div class="flechas-tablet"><i class="fas fa-angle-right"></i></div>
-        </section>
-        <section class="nuevas-obras">
-            <h1>Nuevas Obras <i class="fas fa-angle-right"></i> </h1>
-                <div class="galeria-obras">
-                   <div class="obra-individual">
-                    <a href="/product/detail/1"><img src="/images/nuevas-obras-01.jpg"></a>
-                    
-                  </div>
-                    <div class="obra-individual">
-                        <a href="/product/detail/2"><img src="/images/nuevas-obras-02.jpg"></a>
-                    
-                </div>
-                    
-                    <div class="obra-individual">
-                        <a href="/product/detail/3"> <img src="/images/nuevas-obras-03.jpg"></a>
-                    
-                </div>
-                    
-                    <div class="obra-individual">
-                        <a href="/product/detail/4"><img src="/images/nuevas-obras-04.jpg"></a>
-                    
-                </div>
-                </div>
-        </section>
-        <section class="top-artistas">
-            <h1>TOP ARTISTAS <i class="fas fa-angle-right"></i></h1>
-            <div class="galeria-top-artistas">
-                <div class="artista">
-                    <div class ="imagen-artista"><img src="/images/arista-01.jpg"></div>
-                    <div class="datos-artista">
-                        <h3>Nombre</h3>
-                        <p>Actualmente tiene 25 obras a la venta</p>
+                <section class="novedades-tablet">
+                    <div class="flechas-tablet"><i class="fas fa-angle-left"></i></div>
+                    <div class="novedades-imagen-tablet"><img src="/images/novedades_01_mono.jpg"
+                            alt="imagen-nocedades"></div>
+                    <div class="info-novedades-tablet">
+                        <div class="info-novedades-tablet-texto">
+                            <p>Explora las diferentes colecciones. Te presentamos el nuevo mercado online de NFT</p>
+                        </div>
+                        <div class="info-novedades-tablet-boton"><button class="boton-novedades" type="button">VER
+                                MÁS</button></div>
                     </div>
-                </div>
-                <div class="artista">
-                    <div class ="imagen-artista"><img src="/images/artista-02.jpg"></div>
-                    <div class="datos-artista">
-                        <h3>Nombre</h3>
-                        <p>Actualmente tiene 25 obras a la venta</p>
-                    </div>
-                </div>
-                <div class="artista">
-                    <div class ="imagen-artista"><img src="/images/artista-03.jpg"></div>
-                    <div class="datos-artista">
-                        <h3>Nombre</h3>
-                        <p>Actualmente tiene 25 obras a la venta</p>
-                    </div>
-                </div>
-                <div class="artista">
-                    <div class ="imagen-artista"><img src="/images/artista-04.png"></div>
-                    <div class="datos-artista">
-                        <h3>Nombre</h3>
-                        <p>Actualmente tiene 25 obras a la venta</p>
-                    </div>
-                </div>
-            </div>
-        
-        </section>
-        
-      
-<div class="dropdown">
-    <button onclick=  "myFunction()" class="dropbtn"> Preguntas frecuentes </button>
-    <div id="myDropdown" class="dropdown-content">
-      <a href="#home">¿Quiénes somos?</a>
-      <a href="#about">Formas de pago</a>
-      <a href="#contact">Contact</a>
-    </div>
-</div>
-  
-  
-  <script>
-    /* When the user clicks on the button, 
-    toggle between hiding and showing the dropdown content */
-    function myFunction() {
-      document.getElementById("myDropdown").classList.toggle("show");
-    }
+                    <div class="flechas-tablet"><i class="fas fa-angle-right"></i></div>
+                </section>
+                <section class="nuevas-obras">
+                    <h1>Nuevas Obras <i class="fas fa-angle-right"></i> </h1>
+                    <div class="galeria-obras">
+                        <div class="obra-individual">
+                            <a href="/product/detail/7"><img src="/images/nuevas-obras-01.jpg"></a>
 
-    // Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-    
-    </script>
+                        </div>
+                        <div class="obra-individual">
+                            <a href="/product/detail/8"><img src="/images/nuevas-obras-02.jpg"></a>
 
-  
-        
-    </main>
-    <%- include('./partials/footer') %>
-   
-</body>
-</html>
+                        </div>
+
+                        <div class="obra-individual">
+                            <a href="/product/detail/9"> <img src="/images/nuevas-obras-03.jpg"></a>
+
+                        </div>
+
+                        <div class="obra-individual">
+                            <a href="/product/detail/10"><img src="/images/nuevas-obras-04.jpg"></a>
+
+                        </div>
+                    </div>
+                </section>
+                <section class="top-artistas">
+                    <h1>TOP ARTISTAS <i class="fas fa-angle-right"></i></h1>
+                    <div class="galeria-top-artistas">
+                        <div class="artista">
+                            <div class="imagen-artista"><img src="/images/arista-01.jpg"></div>
+                            <div class="datos-artista">
+                                <h3>Nombre</h3>
+                                <p>Actualmente tiene 25 obras a la venta</p>
+                            </div>
+                        </div>
+                        <div class="artista">
+                            <div class="imagen-artista"><img src="/images/artista-02.jpg"></div>
+                            <div class="datos-artista">
+                                <h3>Nombre</h3>
+                                <p>Actualmente tiene 25 obras a la venta</p>
+                            </div>
+                        </div>
+                        <div class="artista">
+                            <div class="imagen-artista"><img src="/images/artista-03.jpg"></div>
+                            <div class="datos-artista">
+                                <h3>Nombre</h3>
+                                <p>Actualmente tiene 25 obras a la venta</p>
+                            </div>
+                        </div>
+                        <div class="artista">
+                            <div class="imagen-artista"><img src="/images/artista-04.png"></div>
+                            <div class="datos-artista">
+                                <h3>Nombre</h3>
+                                <p>Actualmente tiene 25 obras a la venta</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <div class="desplegables">
+                    
+                    <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn"> ¿Quiénes somos? </button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <p> Margarita Gonzalez</p>
+                            <p> Laura Oviedo</p>
+                            <p> Braian Maynard </p>
+
+                        </div>
+                    </div>
+
+
+                    <script>
+                        /* When the user clicks on the button, 
+                        toggle between hiding and showing the dropdown content */
+                        function myFunction() {
+                            document.getElementById("myDropdown").classList.toggle("show");
+                        }
+
+                        // Close the dropdown if the user clicks outside of it
+                        window.onclick = function (event) {
+                            if (!event.target.matches('.dropbtn')) {
+                                var dropdowns = document.getElementsByClassName("dropdown-content");
+                                var i;
+                                for (i = 0; i < dropdowns.length; i++) {
+                                    var openDropdown = dropdowns[i];
+                                    if (openDropdown.classList.contains('show')) {
+                                        openDropdown.classList.remove('show');
+                                    }
+                                }
+                            }
+                        }
+
+                    </script>
+
+                    <div class="dropdown">
+                        <button onclick="desplegar()" class="dropbtn"> Formas de pago </button>
+                        <div id="myDropdow" class="dropdown-content">
+                            <p> Bitcoin</p>
+                            <p> Mercado pago </p>
+                            <p> Transferencias </p>
+                        </div>
+                    </div>
+
+
+                    <script>
+
+                        function desplegar() {
+                            document.getElementById("myDropdow").classList.toggle("show");
+                        }
+
+                        // Close the dropdown if the user clicks outside of it
+                        window.onclick = function (event) {
+                            if (!event.target.matches('.dropbtn')) {
+                                var dropdowns = document.getElementsByClassName("dropdown-content");
+                                var i;
+                                for (i = 0; i < dropdowns.length; i++) {
+                                    var openDropdown = dropdowns[i];
+                                    if (openDropdown.classList.contains('show')) {
+                                        openDropdown.classList.remove('show');
+                                    }
+                                }
+                            }
+                        }
+
+                    </script>
+
+                    <div class="dropdown">
+                        <button onclick="myFun()" class="dropbtn"> Contacto </button>
+                        <div id="myDrop" class="dropdown-content">
+                            <p> Tel: 113000200</p>
+                            <p> fax: 115006009 </p>
+                            <p> Wsp: 112050070 </p>
+                        </div>
+                    </div>
+
+
+                    <script>
+                        /* When the user clicks on the button, 
+                        toggle between hiding and showing the dropdown content */
+                        function myFun() {
+                            document.getElementById("myDrop").classList.toggle("show");
+                        }
+
+                        // Close the dropdown if the user clicks outside of it
+                        window.onclick = function (event) {
+                            if (!event.target.matches('.dropbtn')) {
+                                var dropdowns = document.getElementsByClassName("dropdown-content");
+                                var i;
+                                for (i = 0; i < dropdowns.length; i++) {
+                                    var openDropdown = dropdowns[i];
+                                    if (openDropdown.classList.contains('show')) {
+                                        openDropdown.classList.remove('show');
+                                    }
+                                }
+                            }
+                        }
+
+                    </script>
+                </div>
+
+
+
+            </main>
+            <%- include('./partials/footer') %>
+
+    </body>
+
+    </html>

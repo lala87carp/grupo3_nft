@@ -1,19 +1,14 @@
-
 <%- include('./partials/head') %>
-<body>
+
+  <body>
     <%- include('./partials/header') %>
-    <main>
+      <main>
         <!--Administrador de productos-->
-        <br>
         <section class="row">
           <article class="col ">
             <h2 class="admin">Administrador de Productos </h2>
           </article>
-          <article class="col-12">
-
-           
-          </article>
-          <article class="col-13">
+          
             <table class="table">
               <thead>
                 <tr>
@@ -26,8 +21,8 @@
               </thead>
               <tbody>
                 <% products.forEach(products=> { %>
-              
-            
+
+
                   <tr>
                     <td>
                       <%= products.id%>
@@ -35,36 +30,36 @@
                     <td>
                       <%= products.name%>
                     </td>
-                    
-                  
+
+
                     <td><a href="/product/detail/<%= products.id%> ">
                         <ion-icon name="eye-outline"></ion-icon>
                       </a></td>
-                    <td><a href="/product/edit/<%= products.id%> ">
+                    <td><a href="product/update/<%= products.id%> ">
                         <ion-icon name="pencil-outline"></ion-icon>
                       </a></td>
                     <td> <a href="/product/delete/<%= products.id%>">
                         <ion-icon name="trash-outline"></ion-icon>
                       </a></td>
                   </tr>
-                  <br>
-                
-                  <% }); %> 
-                  <hr/>
-                </tbody>
-                
-              </table>
-              
-            </article>
-            <hr/>
-          </section>
-          <a href="/product/create">
+                  
 
-            <button class="login-button">  Agregar producto </button>
+                  <% }); %>
+                    <hr />
+              </tbody>
+
+            </table>
+
+          </article>
+          <hr />
+        </section>
+        <a href="/product/create">
+
+          <button class="login-button"> Agregar producto </button>
         </a>
         <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
-    </main>
-   
-    
+      </main>
+
+
   </body>
   <%- include('./partials/footer.ejs') %>

@@ -2,6 +2,7 @@ const path = require('path');
 const { Op } = require("sequelize");
 const moment = require('moment');
 const db = require('../../database/models');
+const { name } = require('ejs');
 
 const sequelize = db.sequelize;
 const Product = db.Product;
@@ -9,26 +10,25 @@ const Category = db.Category;
 
 const ProductsAPIController = {
   'list': async (req, res) => {
+    //Asi es como cuentan todos los productos que hay en una categoría: SELECT `Category`.`id`, `Category`.`name`, COUNT(`products`.`id`) AS `products_count` FROM `category` AS `Category` LEFT OUTER JOIN `products` AS `products` ON `Category`.`id` = `products`.`category_id` GROUP BY `category`.`id`
     const categories = await Category.findAll({
-      include: ['products'],
+      include: [{association:'products', attributes:[]}],
       attributes: [
-        'category_name',
+        'name',
         [sequelize.fn('COUNT', sequelize.col('products.id')), 'products_count'],
       ],
-      group: 'category_name'
+     group: 'category.id'
     });
 
     let countByCategory = categories.reduce((counts, currentCategory) => {
       return {
         ...counts,
-        [currentCategory.category_name]: currentCategory.dataValues.products_count
+        [currentCategory.name]: currentCategory.dataValues.products_count
       }
     }, {});
 
     const count = await Product.count();
-    const products = await Product.findAll({
-      include: ['product_images']
-    })
+    const products = await Product.findAll()
 
     let respuesta = {
       count,
@@ -38,7 +38,7 @@ const ProductsAPIController = {
         name: product.name,
         description: product.description,
         detail: '/api/products/' + product.id,
-        images: product.product_images
+        image: product.image
       }))
     }
     res.json(respuesta);

@@ -25,25 +25,25 @@
                 </tr>
               </thead>
               <tbody>
-                <% productDataBase.forEach(productDataBase=> { %>
+                <% products.forEach(products=> { %>
               
             
                   <tr>
                     <td>
-                      <%= productDataBase.id%>
+                      <%= products.id%>
                     </td>
                     <td>
-                      <%= productDataBase.name%>
+                      <%= products.name%>
                     </td>
                     
                   
-                    <td><a href="/admin/detail/<%= productDataBase.id%> ">
+                    <td><a href="/product/detail/<%= products.id%> ">
                         <ion-icon name="eye-outline"></ion-icon>
                       </a></td>
-                    <td><a href="/product/edit/<%= productDataBase.id%> ">
+                    <td><a href="/product/edit/<%= products.id%> ">
                         <ion-icon name="pencil-outline"></ion-icon>
                       </a></td>
-                    <td> <a href="/product/delete/<%= productDataBase.id%>">
+                    <td> <a href="/product/delete/<%= products.id%>">
                         <ion-icon name="trash-outline"></ion-icon>
                       </a></td>
                   </tr>

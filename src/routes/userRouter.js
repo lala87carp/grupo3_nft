@@ -25,12 +25,12 @@ const upload = multer({ storage })
 
 router.get("/productCart", cartController.cart);
 router.get("/register", guestMiddleware, usersController.index);
-router.get('profile', authMiddleware, usersController.profile);
+router.get('/profile', authMiddleware, usersController.profile);
 router.get('/login', usersController.login)
 router.get('/logout', usersController.logout)
 router.post("/register", upload.single('image'), usersController.create);
-router.post('/login', usersController.loginProcess);
-router.get('/profile', usersController.profile);
+router.post('/login',usersController.loginProcess);
+
 
 
 

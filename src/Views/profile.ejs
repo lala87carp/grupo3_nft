@@ -1,32 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
-    <%- include('./partials/head') %>
-    <body>
-        <% if (<!-- userLogged && userLogged.rol_id == "1") --> { %>                   
-			<%- include ('../partials/adminHeader') %>
-		<% } else { %>
-		  <%- include ('../partials/header') %> 
-		<% } %>
 
+<html lang="en">
+<%- include('./partials/head') %>
+
+<%- include('./partials/header') %> 
+    <body>
+
+       
         <div >
             <div >
                 <div >
 
                     <h2>Hola <%= user.name %> </h2>
                     <div class="foto-perfil">
-                    <img src="/image<%= user.image %> ">
+                    <img src="/images/usersImg/<%= user.image %>">
 
                     </div>
                     <br>
                     <br>
-                    <!-- <div class="login-input"> </div> -->
-                </div>
-            </div>
-        </div>
-    <%- include('./partials/footer') %>
-</body>
-</html>
-
+                   
+        
+            <%- include('./partials/footer') %>
+    </body>
 
 
 		

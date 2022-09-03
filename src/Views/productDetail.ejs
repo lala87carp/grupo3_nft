@@ -1,32 +1,51 @@
 <%- include('./partials/head') %>
-<body>
-    <%- include('./partials/header') %>
-    <link rel="stylesheet" href="/css/detail.css">
-    
-    <main>
-        <section class="contenedor-producto">
-            <h2><%= product.name %></h2><br>
-            <div class="detalle-producto">
-                <div class="foto-producto"><img src="/images/productImg/<%= product.image %>"></div>
-                <div class="detalle-producto">
-                    <br><h3><%= product.name %></h3><br>
-                    <h4>Detalle del producto</h4>
-                    <p><%= product.autor %></p>
-                    <p>Valuado en <%= product.price %> ETH</p><br>
-                    <p><%= product.description %>
-                    </p>
-                </div>
-                <div class="botonera-producto">
-                    <button class="boton">Hacer una Oferta</button>
-                    <a href="/productCart"><button class="boton">Comprar</button></a>
-                </div>
-            </div><br>
+
+    <body>
+        <%- include('./partials/header') %>
+            <link rel="stylesheet" href="/css/detail.css">
+
+            <main>
+                <section class="contenedor-producto">
+                    <h2>
+                        <%= product.name %>
+                    </h2><br>
+                   
+                
+                    <img  class="foto-producto" src="/images/productImg/<%= product.image %>">
+                            </div>
+                            <br>
+                            <h3>
+                                <%= product.name %>
+                            </h3><br>
+                            <h4>Detalle del producto: <%= product.description %></h4>
+                            <br>
+                            <p>
+                                Autor: <%= product.autor %>
+                            </p>
+                            <br>
+                            <p>Valuado en $<%= product.price %>
+                            </p>
+                            <br>
+                            <p>
+                                <%= product.category_id.name %>
+                            </p>
+
+                            <br>
+                           
 
 
-        </section>
-    </main>
-    
-    <%- include('./partials/footer') %>
-   
-</body>
-</html>
+                            <br>
+
+
+                            <a href="/product/create">
+
+                                <button class="login-button"> Agregar más productos </button>
+                            </a>
+                </section>
+            </main>
+
+            <%- include('./partials/footer') %>
+
+    </body>
+
+    </html>

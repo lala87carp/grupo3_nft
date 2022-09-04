@@ -15,51 +15,40 @@ const controller = {
 
     create: async (req, res) => {
         try {
-            if ( !req.body.email || !req.body.password || !req.body.name ||!req.body.birthday) {
-                return res.render('register', {
-                    errors: {
-                        file: {
-                            msg: 'Faltan enviar campos requeridos'
-                        }
-                    },
-                })
-                
-                
+            const errors = validationResult(req);
+            if (!errors.isEmpty()) {
+                return res.render('register', {errors: errors.array()});
             }
             
             await db.User.create({
                 ...req.body,
+                name: req.body.name + ' ' + req.body.surname,
 
                 password: bcrypt.hashSync(req.body.password, 10),
                 image: req.file.filename,
                 roles_id: 2
             });
-            return res.redirec("login")
+            return res.redirect("login")
 
            
         } catch (error) {
             if (error.name === 'SequelizeUniqueConstraintError') {
                 return res.render('register', {
-                    errors: {
-                        email: {
+                    errors: [{
                             msg: "Ya existe un usuario con ese email"
-                        }
-                    }
+                        }]
                 });
             }
             console.log(error)
             res.render('register', {
-                errors: {
-                    server: {
-                        msg: "Ocurrio un error. Comunicate con el administrador."
-                    }
-                }
+                errors: [{
+                    msg: "Ocurrio un error. Comunicate con el administrador."
+                }]
+                
             })
         }
-        
     },
     
- 
     
     
     
@@ -72,11 +61,10 @@ const controller = {
         
         const user = await db.User.findOne({ where: {  email: req.body.email } })
        
-        if (!user) return res.render('userLoginForm', {
+        if (!user) return res.render('login', {
             errors: {
-                email: {
                     msg: 'Usuario o contraseña incorrectos'
-                }
+                
             }
         });
        
@@ -99,14 +87,13 @@ const controller = {
         }
         
        
-        return res.redirect(`profile`)
+        return res.redirect('profile')
 
     },
    
     profile: async (req, res) => {
         const user =  await db.User.findByPk(req.session.userLogged)
         return res.render('profile', {
-           
            user
         })
     },
@@ -114,10 +101,7 @@ const controller = {
     logout: (req, res) => {
         res.clearCookie('userEmail');
         req.session.destroy();
-       
-
     }
-
 }
 
 module.exports = controller;

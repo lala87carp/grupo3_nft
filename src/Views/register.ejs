@@ -8,43 +8,38 @@
             </p>
                 <div class="user-info">
                   <div class="errores">
-                  <ul></ul>
+                  <ul>
+                    <% typeof errors != 'undefined' && errors.forEach(error => { %>
+                      <li> <%= error.msg %></li>
+                    <%})%>
+                  </ul>
                 </div>
-                  <form action="/user/register" method="post" enctype='multipart/form-data' class="login-form">
+                  <form action="/user/register" method="post" enctype='multipart/form-data' class="login-form" id="reservation">
                     
                     <label for="name" class="titulos-register">Nombre</label>
-                    <input name="name" type="text" class="login-input" required placeholder="Nombre" minlength="2" > 
+                    <input name="name" type="text" class="login-input" placeholder="Nombre" minlength="2" id="name"> 
                       
                     <br>
                     <label for="surname" class="titulos-register">Apellido</label>
-                    <input name="surname" type="text" class="login-input" required placeholder="Apellido"
-                      minlength="3" />
+                    <input name="surname" type="text" class="login-input" placeholder="Apellido"
+                      minlength="3" id="surname"/>
                     <br>
                     <label for="date" class="titulos-register">Fecha de nacimiento</label>
-                    <input name="birthday" type="date" class="login-input" required />
-                    <br>
-                    <label for="username" class="titulos-register">Usuario</label>
-                    <input name="username" type="text" class="login-input" required placeholder="Nombre de usuario"
-                      minlength="5" />
+                    <input name="birthday" type="date" class="login-input" id="birthday"/>
                     <br>
                     <label for="email"class="titulos-register">Email</label>
-                    <i class="fa fa-envelope icon" ></i><input name="email" type="email" class="login-input" required
+                    <i class="fa fa-envelope icon" ></i><input name="email" type="email" class="login-input" id="email"
                       placeholder="E-mail" <%= locals.errors && errors.email ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.email : null %>" />
-                      <% if (locals.errors && errors.email) { %>
-                        <div class="text-danger">
-                          <%= errors.email.msg %>
-                        </div>
-                      <% } %>
                     <br>
                     <label for="psw"class="titulos-register">Contraseña</label>
-                    <input name="password" type="password" class="login-input" required minlength="5"
-                      placeholder="Contraseña" />
+                    <input name="password" type="password" class="login-input" minlength="5"
+                      placeholder="Contraseña" id="password" />
                     <br>
                    
                     <div class="user-img">
                       <label class="header-pp"class="titulos-register">Foto de perfil:</label>
                       <div class="foto-perfil"></div>
-                      <input type="file" class="login-input" name="image" placeholder="Foto de perfil" capture>
+                      <input type="file" class="login-input" name="image" placeholder="Foto de perfil" capture id="image" accept=".jpg,.png,.gif,.jpeg">
                     </div>
 
                   <div class="botones-register">
@@ -58,6 +53,7 @@
 
       <%- include('./partials/footer') %>
 
+      <!-- <script src="/js/registerValidation.js"></script> -->
   </body>
 
   </html>

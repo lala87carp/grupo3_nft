@@ -21,7 +21,7 @@ window.addEventListener("load", function () {
               );
           };
           if( !validateEmail.test(email.value) ){
-            errores.push("el email no es un formato valido")
+            errores.push("El email no es un formato valido")
           };
         
         if (password.value == "") {

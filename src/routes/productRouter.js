@@ -29,17 +29,18 @@ router.get('/', controller.find);
 router.get('/detail/:id', controller.findOne);
 router.get('/create', controller.createForm);
 router.post('/create', upload.single('image'),controller.create);
-router.get('/update', controller.updateForm);
+router.get('/update/:id', controller.updateForm);
 router.put('/update/:id',  upload.single('image'), controller.update);
-router.delete('delete/:id',userLoggedMiddleware, controller.delete);
+router.get('/delete/:id', controller.delete);
+router.delete("/delete/:id", controller.destroy); 
 
 // router.post('/productCreateForm', controller.create)
 /* router.get("/productDetail", productController.detail);
 router.get("/productCreateForm", productCreateController.index);
 router.post("/productCreateForm", upload.single('image'), productCreateController.create);
 router.get("/edit/:id", productCreateController.edit);
-router.put("/edit/:id",upload.single('image'), productCreateController.put);
-router.get("/delete/:id",productCreateController.destroy); */
+router.put("/edit/:id",upload.single('image'), productCreateController.put);*/
+
 
 
 module.exports = router;

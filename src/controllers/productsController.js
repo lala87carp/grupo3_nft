@@ -12,8 +12,11 @@ const controller = {
     createForm: (req, res) => {
         res.render("productCreateForm")
     },
-    updateForm: (req, res) => {
-        res.render("edit")
+    updateForm: async (req, res) => {
+        const { id } = req.params;
+        const product = await db.Product.findOne({ where: { id } });
+        
+        res.render("edit", {productEdit: product})
     },
      
     create: async (req, res) => { 
@@ -55,45 +58,45 @@ const controller = {
     update: async (req, res) => {
         const { id } = req.params;
         try {
-            //tengo que hacer esta pagina productUpdateForm y agregar boton delete
-
             const paramsToUpdate = { ...req.body };
 
-            if(req.files?.filename) {
-                paramsToUpdate.image = req.files?.filename;
-            }
+            paramsToUpdate.image = req.files?.filename || undefined
 
             const updatedProduct = await db.Product.update(
                 paramsToUpdate,
                 { where: { id } }
             );
-            /* if(!updatedProduct) {
-                return res.render('productUpdateForm', { errors: ...})
-            } */
+            
             console.log({updatedProduct});
-            res.redirect(`/productDetail/${updatedProduct.id}`)
+            res.redirect(`/product/detail/${id}`)
 
         } catch (error) {
             console.log({errorName: error.name});
             /* if(error.name === '') {
                 return res.render('productUpdateForm', { errors: ...})
             } */
-            res.redirect('', {})
+            res.redirect('/admin', {})
         }
     },
-    delete: async (req, res) => {
+
+    delete: async (req,res) => {
         const { id } = req.params;
-        try {
-            await db.Product.destroy({ where: id });
-            res.redirect('/admin');
-        } catch (error) {
-            if(error.name === /* TODO Verificar nombre del error */'SequielizeNotFoundException') {
-                return res.render('edit', { errors: {
-                    msg: 'El producto que intentas borrar no existe'
-                }})
+        const product = await db.Product.findOne({ where: { id } });
+        res.render('confirmProductDelete', {
+            product
+        })
+    },
+
+    destroy: function (req, res) {
+        const productId= req.params.id;
+        db.Product
+                .destroy({ where: { id: productId }, force: true }) 
+                .then(() => {
+                    return res.redirect('/admin')
+                })
+                .catch(error => res.send(error))
             }
+        
         }
-    }
-    
-}
+
 module.exports = controller; 

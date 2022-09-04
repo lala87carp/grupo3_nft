@@ -15,8 +15,7 @@
                         <div class="texto-novedades">
                             <p>Explora las diferentes colecciones. Te presentamos el nuevo mercado online de NFT</p>
                         </div>
-                        <div class="espacio-boton-novedades"><button class="boton-novedades" type="button"
-                                href="/productDetail">VER MÁS</button></div>
+                        <div class="espacio-boton-novedades"></div>
                     </div>
                 </section>
                 <section class="novedades-tablet">
@@ -27,19 +26,20 @@
                         <div class="info-novedades-tablet-texto">
                             <p>Explora las diferentes colecciones. Te presentamos el nuevo mercado online de NFT</p>
                         </div>
-                        <div class="info-novedades-tablet-boton"><button class="boton-novedades" type="button">VER
-                                MÁS</button></div>
+                        <div class="info-novedades-tablet-boton"></div>
                     </div>
                     <div class="flechas-tablet"><i class="fas fa-angle-right"></i></div>
                 </section>
                 <section class="nuevas-obras">
                     <h1>Nuevas Obras <i class="fas fa-angle-right"></i> </h1>
                     <div class="galeria-obras">
+                        <% products.forEach(product => { %>
                         <div class="obra-individual">
-                            <a href="/product/detail/7"><img src="/images/nuevas-obras-01.jpg"></a>
+                            <a href="/product/detail/<%=product.id%>"><img src="/images/productImg/<%=product.image%>"></a>
 
-                        </div>
-                        <div class="obra-individual">
+                        </div> 
+                        <% }) %>
+                        <!-- <div class="obra-individual">
                             <a href="/product/detail/8"><img src="/images/nuevas-obras-02.jpg"></a>
 
                         </div>
@@ -52,7 +52,7 @@
                         <div class="obra-individual">
                             <a href="/product/detail/10"><img src="/images/nuevas-obras-04.jpg"></a>
 
-                        </div>
+                        </div> -->
                     </div>
                 </section>
                 <section class="top-artistas">

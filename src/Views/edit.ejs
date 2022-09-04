@@ -19,7 +19,7 @@
                                     <div class="errores">
                                         <ul></ul>
                                       </div>
-                                    <form action="<%= productEdit.id%>?_method=PUT
+                                    <form action="/product/update/<%= productEdit.id%>?_method=PUT
                             " method="POST" enctype="multipart/form-data">
 
                                         <div class="col-12 col-md-6">
@@ -56,7 +56,7 @@
                                         </div>
                                         <br>
                                         <div class="col-12">
-                                            <label for="description" class="form-label" id="descripcionEdit">Descipción:</label>
+                                            <label for="description" class="form-label" id="descripcionEdit">Descripción:</label>
                                             <textarea name="description"><%= productEdit.description%></textarea>
                                         </div>
                                         <br>

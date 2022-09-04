@@ -10,8 +10,8 @@ window.addEventListener("load", function () {
         let campoNombre = document.querySelector("#name");
         if (campoNombre.value == " ") {
             errores.push("El campo de nombre tiene que estar completo")
-        } else if (campoNombre.value.length < 3) {
-            errores.push("El campo de nombre debe tener al menos 3 caracteres");
+        } else if (campoNombre.value.length < 2) {
+            errores.push("El campo de nombre debe tener al menos 2 caracteres");
         }
         let surname = document.querySelector("#surname");
         if (surname.value == " ") {
@@ -33,14 +33,12 @@ window.addEventListener("load", function () {
         };
 
         let password = document.querySelector("#password")
-        if (password.value.length < 8) {
-            errores.push("La contraseña debe tener entre 8 y 10 caracteres");
-        };
         if (password.value == "") {
             errores.push("La contraseña no puede estar vacia");
         };
-
-
+        if (password.value.length < 8) {
+            errores.push("La contraseña debe tener entre 8 y 10 caracteres");
+        };
 
         const file = document.getElementById('image');
         function validate_fileupload(fileName) {

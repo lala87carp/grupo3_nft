@@ -17,12 +17,12 @@
                   <form action="/user/register" method="post" enctype='multipart/form-data' class="login-form" id="reservation">
                     
                     <label for="name" class="titulos-register">Nombre</label>
-                    <input name="name" type="text" class="login-input" placeholder="Nombre" minlength="2" id="name"> 
+                    <input name="name" type="text" class="login-input" placeholder="Nombre"  id="name"> 
                       
                     <br>
                     <label for="surname" class="titulos-register">Apellido</label>
                     <input name="surname" type="text" class="login-input" placeholder="Apellido"
-                      minlength="3" id="surname"/>
+                       id="surname"/>
                     <br>
                     <label for="date" class="titulos-register">Fecha de nacimiento</label>
                     <input name="birthday" type="date" class="login-input" id="birthday"/>
@@ -32,7 +32,7 @@
                       placeholder="E-mail" <%= locals.errors && errors.email ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.email : null %>" />
                     <br>
                     <label for="psw"class="titulos-register">Contraseña</label>
-                    <input name="password" type="password" class="login-input" minlength="5"
+                    <input name="password" type="password" class="login-input" 
                       placeholder="Contraseña" id="password" />
                     <br>
                    

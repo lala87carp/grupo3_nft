@@ -1,15 +1,12 @@
-const form = document.getElementById('loginForm');
-const email = document.getElementById('loginEmail');
-const password = document.getElementById('loginPassword');
-
 
 window.addEventListener("load", function () {
-    let formulario = document.querySelector("form.reservation"); //chequear nombre
+    let formulario = document.querySelector("#loginForm");
     formulario.addEventListener("submit", function (e) {
         e.preventDefault();
 
         let errores = []
 
+        const email = document.querySelector('#loginEmail');
         if (email.value == " ") {
             errores.push("El campo de usuario tiene que estar completo")
         } 
@@ -24,6 +21,7 @@ window.addEventListener("load", function () {
             errores.push("El email no es un formato valido")
           };
         
+        let password = document.querySelector("#loginPassword")  
         if (password.value == "") {
             errores.push("La contraseña no puede estar vacia");
         }; 

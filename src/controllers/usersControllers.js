@@ -85,9 +85,7 @@ const controller = {
         if (req.body.remember_user) {
             res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })
         }
-        
-       
-        return res.redirect('profile')
+         return res.redirect('profile')
 
     },
    

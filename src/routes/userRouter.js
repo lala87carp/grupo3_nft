@@ -10,7 +10,7 @@ const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware')
 const userLoggedMiddleware =require('../middlewares/userLoggedMiddleware')
 const registerValidator = require('../middlewares/registerValidator')
-
+const loginValidator = require('../middlewares/loginValidator')
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -30,7 +30,7 @@ router.get('/profile', authMiddleware, usersController.profile);
 router.get('/login', usersController.login)
 router.get('/logout', usersController.logout)
 router.post("/register", upload.single('image'), registerValidator, usersController.create);
-router.post('/login',usersController.loginProcess);
+router.post('/login', loginValidator, usersController.loginProcess);
 
 
 module.exports = router; 

@@ -4,28 +4,28 @@
         <%- include('./partials/header') %>
             <main>
 
-                
-                <div class="titulo">
-                    <h2>Actualizar un Producto</h2>
-                </div>
-
-
-
                 <section class="bg-home pt-4">
                     <div class="container">
+                        <div>
+
+                            <h2>Actualizar</h2>
+                        </div>
+                        <br>
                         <div class="row">
                             <div class="col-8 mx-auto bg-light ">
                                 <div class="create-form">
                                     <div class="errores">
                                         <ul></ul>
-                                      </div>
+                                    </div>
+
                                     <form action="/product/update/<%= productEdit.id%>?_method=PUT
                             " method="POST" enctype="multipart/form-data" id="editForm">
 
                                         <div class="col-12 col-md-6">
-                                            <label for="name" class="form-label" id="nombreEdit">Nombre del producto:</label>
+                                            <label for="name" class="form-label" >Nombre del
+                                                producto:</label>
                                             <input type="text" name="name" value="<%= productEdit.name%>"
-                                                class="form-input">
+                                                class="form-input" id="nombreEdit">
                                         </div>
                                         <br>
 
@@ -56,8 +56,8 @@
                                         </div>
                                         <br>
                                         <div class="col-12">
-                                            <label for="description" class="form-label" id="descripcionEdit">Descripción:</label>
-                                            <textarea name="description"><%= productEdit.description%></textarea>
+                                            <label for="description" class="form-label">Descripción:</label>
+                                            <textarea name="description"id="descripcionEdit"><%= productEdit.description%></textarea>
                                         </div>
                                         <br>
 
@@ -66,12 +66,12 @@
                                         <div class="custom-file">
                                             <figure class="form-group">
                                                 <img class="w-100" src="/images/productImg/<%= productEdit.image%>"
-                                                    alt="product <%= productEdit.nombre%>" id="imageEdit">
+                                                    alt="product <%= productEdit.nombre%>" >
                                             </figure>
                                             <br>
                                             <input type="hidden" name="oldImagen" value="<%= productEdit.image%>">
                                             <!--De esta forma logro conservar y que viaje la imagen anterior de esta forma evito que el usuario seleccione una imagen nuevamente, ( si no lo desea) -->
-                                            <input type="file" name="image">
+                                            <input type="file" name="image" id="imageEdit">
                                             <!--<input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="imagen" required value=""> 
                                     <label class="custom-file-label" for="inputGroupFile01">Seleccione una imagen...</label>-->
                                         </div>

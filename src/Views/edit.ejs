@@ -15,7 +15,11 @@
                             <div class="col-8 mx-auto bg-light ">
                                 <div class="create-form">
                                     <div class="errores">
-                                        <ul></ul>
+                                        <ul>
+                                            <% typeof errors != 'undefined' && errors.forEach(error => { %>
+                                                <li> <%= error.msg %></li>
+                                              <%})%>
+                                        </ul>
                                     </div>
 
                                     <form action="/product/update/<%= productEdit.id%>?_method=PUT
@@ -88,6 +92,6 @@
                     </div>
                 </section>
             </main>
-            <script src="/js/productEditValidation.js"></script>
+            <!-- <script src="/js/productEditValidation.js"></script> -->
     </body>
     <%- include('./partials/footer.ejs') %>

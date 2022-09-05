@@ -9,7 +9,11 @@
 
                 <div class="container products-wrapper">
                     <div class="errores">
-                        <ul></ul>
+                        <ul>
+                            <% typeof errors != 'undefined' && errors.forEach(error => { %>
+                                <li> <%= error.msg %></li>
+                              <%})%>
+                        </ul>
                       </div>
                     <div class="row">
                         <div class="col-12">
@@ -69,7 +73,7 @@
                     </div>
                 </div>
 
-                <script src="/js/productCreateValidation.js"></script>
+                <!-- <script src="/js/productCreateValidation.js"></script> -->
 
             </body>
         </main>

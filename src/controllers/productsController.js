@@ -15,50 +15,74 @@ const controller = {
     updateForm: async (req, res) => {
         const { id } = req.params;
         const product = await db.Product.findOne({ where: { id } });
-        
-        res.render("edit", {productEdit: product})
+
+        res.render("edit", { productEdit: product })
     },
-     
-    create: async (req, res) => { 
-        const { name, price, autor, category_id } = req.body;
-        if (!name || !price || !autor || !category_id ) {
-            return res.render('productCreateForm', {
-                errors: {
-                    msg: `Faltan los campos requeridos: ${
-                        ['name', 'price', 'autor', 'category_id']
-                            .filter(field => !req.body[field])
-                            .join(', ')
-                    }`
-                }
+
+    create: async (req, res) => {
+        try {
+            const errors = validationResult(req);
+            if (!errors.isEmpty()) {
+                return res.render('productCreateForm', { errors: errors.array() });
+            }
+            const { name, price, autor, category_id } = req.body;
+            if (!name || !price || !autor || !category_id) {
+                return res.render('productCreateForm', {
+                    errors: {
+                        msg: `Faltan los campos requeridos: ${['name', 'price', 'autor', 'category_id']
+                                .filter(field => !req.body[field])
+                                .join(', ')
+                            }`
+                    }
+                })
+            }
+            const newProduct = { ...req.body, category_id: Number(category_id) }
+
+            if (req.file?.filename) {
+                newProduct.image = req.file.filename
+
+            }
+            const product = await db.Product.create(newProduct);
+
+            res.redirect(`/product/detail/${product.id}`)
+
+
+        } catch (error) {
+            res.render('productCreateForm', {
+                errors: [{
+                    msg: "Ocurrio un error. Comunicate con el administrador."
+                }]
+
             })
         }
-        const newProduct = { ...req.body, category_id: Number(category_id) }
 
-        if(req.file?.filename) {
-            newProduct.image = req.file.filename
-            
-        }
-        const product = await db.Product.create(newProduct);
-
-        res.redirect(`/product/detail/${product.id}`)
     },
     find: async (req, res) => {
         const products = await db.Product.findAll()
-        
+
         res.render('./admin', { products });
     },
     findOne: async (req, res) => {
         const { id } = req.params;
         const product = await db.Product.findOne({ where: { id } });
-        
-        if(!product) return res.redirect('/not-found');
+
+        if (!product) return res.redirect('/not-found');
 
         return res.render('productDetail', { product });
     },
-    
+
     update: async (req, res) => {
         const { id } = req.params;
         try {
+
+            const errors = validationResult(req);
+            if (!errors.isEmpty()) {
+                const { id } = req.params;
+                const product = await db.Product.findOne({ where: { id } });
+
+                return res.render('edit', { errors: errors.array(), productEdit: product });
+            }
+
             const paramsToUpdate = { ...req.body };
 
             paramsToUpdate.image = req.files?.filename || undefined
@@ -67,20 +91,21 @@ const controller = {
                 paramsToUpdate,
                 { where: { id } }
             );
-            
-            console.log({updatedProduct});
+
+            console.log({ updatedProduct });
             res.redirect(`/product/detail/${id}`)
 
         } catch (error) {
-            console.log({errorName: error.name});
-            /* if(error.name === '') {
-                return res.render('productUpdateForm', { errors: ...})
-            } */
-            res.redirect('/admin', {})
+            res.render('edit', {
+                errors: [{
+                    msg: "Ocurrio un error. Comunicate con el administrador."
+                }]
+
+            })
         }
     },
 
-    delete: async (req,res) => {
+    delete: async (req, res) => {
         const { id } = req.params;
         const product = await db.Product.findOne({ where: { id } });
         res.render('confirmProductDelete', {
@@ -89,15 +114,15 @@ const controller = {
     },
 
     destroy: function (req, res) {
-        const productId= req.params.id;
+        const productId = req.params.id;
         db.Product
-                .destroy({ where: { id: productId }, force: true }) 
-                .then(() => {
-                    return res.redirect('/admin')
-                })
-                .catch(error => res.send(error))
-            }
-        
-        }
+            .destroy({ where: { id: productId }, force: true })
+            .then(() => {
+                return res.redirect('/admin')
+            })
+            .catch(error => res.send(error))
+    }
+
+}
 
 module.exports = controller; 

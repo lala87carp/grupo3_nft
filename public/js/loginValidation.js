@@ -12,14 +12,14 @@ window.addEventListener("load", function () {
         } 
         const validateEmail = (email) => {
             return String(email)
-              .toLowerCase()
-              .match(
-                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-              );
-          };
-          if( !validateEmail.test(email.value) ){
+                .toLowerCase()
+                .match(
+                    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                );
+        };
+        if (!validateEmail(email.value)) {
             errores.push("El email no es un formato valido")
-          };
+        };
         
         let password = document.getElementById("loginPassword")  
         if (password.value == "") {
@@ -27,6 +27,7 @@ window.addEventListener("load", function () {
         }; 
         if (errores.length > 0) {
             e.preventDefault();
+            console.log(errores)
 
             let erroresUl = document.querySelector("div.errores ul");
             erroresUl.innerHTML = "";

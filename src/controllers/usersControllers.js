@@ -58,8 +58,12 @@ const controller = {
 
 
     loginProcess: async (req, res) => {
-        
-        const user = await db.User.findOne({ where: {  email: req.body.email } })
+        try {
+            const errors = validationResult(req);
+            if (!errors.isEmpty()) {
+                return res.render('login', {errors: errors.array()});
+            }
+            const user = await db.User.findOne({ where: {  email: req.body.email } })
        
         if (!user) return res.render('login', {
             errors: [{
@@ -85,6 +89,16 @@ const controller = {
             res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })
         }
          return res.redirect('profile')
+            
+        } catch (error) {
+            res.render('login', {
+                errors: [{
+                    msg: "Ocurrio un error. Comunicate con el administrador."
+                }]
+                
+            })
+        }
+        
     },
    
     profile: async (req, res) => {

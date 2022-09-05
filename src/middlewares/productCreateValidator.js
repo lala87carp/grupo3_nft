@@ -1,7 +1,7 @@
 const path = require('path');
 const { body } = require('express-validator');
 
-const productEditValidator = [
+const productCreateValidator = [
   body('name').notEmpty().withMessage('Debes escribir el nombre del producto').bail().isLength({ min: 5 }).withMessage('El nombre no puede tener menos de 5 caracteres'),
   body('description').notEmpty().withMessage('Debes escribir una descripcion').bail().isLength({ min: 20 }).withMessage('La descripción no puede tener menos de 20 caracteres'),
   body('image').custom((value, { req }) => {
@@ -19,4 +19,4 @@ const productEditValidator = [
       })
 ]
 
-module.exports = productEditValidator
+module.exports = productCreateValidator

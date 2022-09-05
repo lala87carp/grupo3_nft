@@ -62,10 +62,10 @@ const controller = {
         const user = await db.User.findOne({ where: {  email: req.body.email } })
        
         if (!user) return res.render('login', {
-            errors: {
+            errors: [{
                     msg: 'Usuario o contraseña incorrectos'
                 
-            }
+            }]
         });
        
         const passwordsMatch = bcrypt.compareSync(
@@ -74,11 +74,10 @@ const controller = {
         );
         
         if (!passwordsMatch) return res.render('login', {
-            errors: {
-                email: {
+            errors:  [{
                     msg: 'Usuario o contraseña incorrectos'
-                }
-            }
+                }]
+            
         })
         delete user.password
         req.session.userLogged = user.id;
@@ -86,7 +85,6 @@ const controller = {
             res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })
         }
          return res.redirect('profile')
-
     },
    
     profile: async (req, res) => {

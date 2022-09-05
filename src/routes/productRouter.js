@@ -4,14 +4,16 @@ const path = require('path');
 const multer = require('multer');
 const { body } = require('express-validator');
 const controller = require("../controllers/productsController");
-const userLoggedMiddleware =require('../middlewares/userLoggedMiddleware')
+const userLoggedMiddleware =require('../middlewares/userLoggedMiddleware');
+const productCreateValidator = require('../middlewares/productCreateValidator');
+const productEditValidator = require ('../middlewares/productEditValidator')
 
-const validateCreateForm =[
-    body('name').isLength({min:2}).withMessage('complete el nombre del producto '),
-    body('price').isLength({min:2}).withMessage('complete el precio'),
-    body('description').isLength({min:2}).withMessage('complete la descripción')
+// const validateCreateForm =[
+//     body('name').isLength({min:2}).withMessage('complete el nombre del producto '),
+//     body('price').isLength({min:2}).withMessage('complete el precio'),
+//     body('description').isLength({min:2}).withMessage('complete la descripción')
    
-]
+// ]
 
 // donde voy a guardar imagenes de los productos
 const storage = multer.diskStorage({
@@ -24,7 +26,7 @@ const storage = multer.diskStorage({
 })
 const upload = multer({ storage })
 
-
+//donde van los mw que traje arriba?
 router.get('/', controller.find);
 router.get('/detail/:id', controller.findOne);
 router.get('/create', controller.createForm);

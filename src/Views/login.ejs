@@ -5,13 +5,12 @@
 
       <main>
         <div class="login">
+          
           <div class="form">
             <div class="errores">
-              <ul>
-                <% typeof errors != 'undefined' && errors.forEach(error => { %>
-                  <li> <%= error.msg %></li>
-                <%})%>
-              </ul>
+              <ul></ul>
+            </div>
+            <br>
             <form action="/user/login" method="post"  class="login-form" id="loginForm">
               <input type="text" placeholder="Usuario"  name="email" id="loginEmail"/>
               <input type="password" placeholder="Contraseña" name="password" id="loginPassword"/>
@@ -24,7 +23,7 @@
 
       <%- include('./partials/footer') %>
 
-      <!-- <script src="/js/loginValidation.js"></script> -->
+      <script src="/js/loginValidation.js"></script> 
 
 
   </body>

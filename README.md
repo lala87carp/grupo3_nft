@@ -27,4 +27,7 @@ ___
  + **Braian Maynard**: Técnico en telecomunicaciones, 25 años, vivo en Gualeguaychú, Entre Ríos. Fan de River Plate y la buena música. adentrandome en el mundo de la programación 
  #### Tablero de trabajo. 📲 💻 👩‍💻 
  + <a href ='https://trello.com/b/FQjIuUeb/proyecto-integrador-sprint-1'> Trello </a>
+ 
+ #### React Dashboard. 📲 💻 👩‍💻 
+ + <a href ='https://github.com/magiegonzalezp00/grupo3_nft_reactapp.git'> Git Repository - I love NFT React Dashboard </a>
 

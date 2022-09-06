@@ -6,7 +6,8 @@ const userConteroller = require("../controllers/usersControllers");
 
 
 router.get("/", mainController.index);
-router.get('/login', userConteroller.login)
-router.get('/register', userConteroller.index)
+router.get('/login', userConteroller.login);
+router.get('/register', userConteroller.index);
+router.get("/search", mainController.search);
 
 module.exports = router;

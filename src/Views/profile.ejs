@@ -3,23 +3,29 @@
 <html lang="en">
 <%- include('./partials/head') %>
 
-<%- include('./partials/header') %> 
+<%- include('./partials/adminHeader') %> 
+<br>
+<br>
     <body>
 
        
-        <div >
-            <div >
-                <div >
-
-                    <h2>Hola <%= user.name %> </h2>
+        
+            
+                    <form class="profileok" action="/user/logout" method="get"> 
+                    
+                    <h2>Hola <%= user.name %> bienvenido a I ❤️ NFT</h2>
+                    <br>
+                    <br>
                     <div class="foto-perfil">
-                    <img src="/images/usersImg/<%= user.image %>">
-
+                        <img class="fotoPerfil" src="/images/usersImg/<%= user.image %>">
+                        
                     </div>
                     <br>
                     <br>
-                   
-        
+                   <button class="logout" type="submit"> Cerrar sesión </button>
+                   </form>
+                   <br>
+                   <br>
             <%- include('./partials/footer') %>
     </body>
 

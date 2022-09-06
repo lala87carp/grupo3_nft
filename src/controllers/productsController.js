@@ -68,7 +68,7 @@ const controller = {
 
         if (!product) return res.redirect('/not-found');
 
-        return res.render('productDetail', { product });
+        return res.render('productDetail', { product,  session: req.session ? req.session : ""});
     },
 
     update: async (req, res) => {
@@ -80,7 +80,7 @@ const controller = {
                 const { id } = req.params;
                 const product = await db.Product.findOne({ where: { id } });
 
-                return res.render('edit', { errors: errors.array(), productEdit: product });
+                return res.render('edit', { errors: errors.array(), productEdit: product, session: req.session ? req.session : "" });
             }
 
             const paramsToUpdate = { ...req.body };
@@ -99,6 +99,7 @@ const controller = {
             res.render('edit', {
                 errors: [{
                     msg: "Ocurrio un error. Comunicate con el administrador."
+                    ,session: req.session ? req.session : ""
                 }]
 
             })
@@ -109,7 +110,7 @@ const controller = {
         const { id } = req.params;
         const product = await db.Product.findOne({ where: { id } });
         res.render('confirmProductDelete', {
-            product
+            product, session: req.session ? req.session : ""
         })
     },
 

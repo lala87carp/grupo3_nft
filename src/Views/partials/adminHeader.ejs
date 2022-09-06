@@ -12,9 +12,11 @@
         </div>
         
         <div class="iconos-barra-logo">
-            <a href="/admin">
-                <i class="fas fa-user-cog"></i>
-            </a>
+            <% if (session.userLogged && session.userLogged== 2) { %>
+                <a href="/admin">
+                    <i class="fas fa-user-cog"></i>
+                </a>
+                <% } %>
 
                 <div class="menu-hamburguesa">
         <i class="fas fa-bars"></i>
@@ -30,10 +32,17 @@
             <a href="/admin">
                 <i class="fas fa-user-cog"></i>
             </a> -->
+            <a href="/login">
+                <i class="fas fa-user" ></i>
+            </a>
 
             <a href="/user/productCart">
                 <i class="fas fa-shopping-cart"> </i>
             </a>
+            <a href="/user/logout"> 
+                <i class="fa-thin fa-share-from-square"></i>
+            </a>
+
         </div>
     </section>
     <section class="menu-header">

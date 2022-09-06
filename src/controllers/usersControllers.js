@@ -17,7 +17,7 @@ const controller = {
         try {
             const errors = validationResult(req);
             if (!errors.isEmpty()) {
-                return res.render('register', {errors: errors.array()});
+                return res.render('register',{errors: errors.array()}, );
             }
             
             await db.User.create({
@@ -35,15 +35,17 @@ const controller = {
             if (error.name === 'SequelizeUniqueConstraintError') {
                 return res.render('register', {
                     errors: [{
-                            msg: "Ya existe un usuario con ese email"
+                            msg: "Ya existe un usuario con ese email",
                         }]
+                       
                 });
             }
             console.log(error)
             res.render('register', {
                 errors: [{
-                    msg: "Ocurrio un error. Comunicate con el administrador."
-                }]
+                    msg: "Ocurrio un error. Comunicate con el administrador.",
+                }],
+               
                 
             })
         }
@@ -53,7 +55,7 @@ const controller = {
     
     
     login: (req, res) => {
-        res.render("login")
+        res.render("login",{ session: req.session ? req.session : ""})
     },
 
 
@@ -67,7 +69,8 @@ const controller = {
        
         if (!user) return res.render('login', {
             errors: [{
-                    msg: 'Usuario o contraseña incorrectos'
+                    msg: 'Usuario o contraseña incorrectos',
+                    
                 
             }]
         });
@@ -79,7 +82,8 @@ const controller = {
         
         if (!passwordsMatch) return res.render('login', {
             errors:  [{
-                    msg: 'Usuario o contraseña incorrectos'
+                    msg: 'Usuario o contraseña incorrectos',
+                    
                 }]
             
         })
@@ -94,6 +98,7 @@ const controller = {
             res.render('login', {
                 errors: [{
                     msg: "Ocurrio un error. Comunicate con el administrador."
+                   
                 }]
                 
             })
@@ -104,13 +109,15 @@ const controller = {
     profile: async (req, res) => {
         const user =  await db.User.findByPk(req.session.userLogged)
         return res.render('profile', {
-           user
+           user, session: req.session ? req.session : ""
         })
     },
 
     logout: (req, res) => {
-        res.clearCookie('userEmail');
+        res.clearCookie('user');
         req.session.destroy();
+
+        return res.redirect('/')
     }
 }
 

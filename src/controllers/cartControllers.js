@@ -1,6 +1,6 @@
 const controller = {
     cart: (req, res) => {
-        res.render("productCart")
+        res.render("productCart", {session: req.session ? req.session : ""})
     }
 }
-module.exports = controller;
+module.exports = controller; 

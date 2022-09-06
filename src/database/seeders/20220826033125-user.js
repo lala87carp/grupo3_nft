@@ -19,7 +19,7 @@ module.exports = {
         birthday: "1994/03/22",
         roles_id: 1,
         password: bcrypt.hashSync("123456",10),
-        image:"foto-1661635509583.jpeg",
+        image:"foto-1662413440243.jpeg",
 
       },
       {
@@ -28,14 +28,14 @@ module.exports = {
         birthday: "1997/07/21",
         roles_id: 1,
         password: bcrypt.hashSync("123456",10),
-        image:"foto-1661635509583.jpeg",
+        image:"foto-1662413440243.jpeg",
 
       },
       {
       name: "Margarita",
       email: "maggie200ar@hotmail.com",
       password: bcrypt.hashSync("123456",10),
-      image:"foto-1661635509583.jpeg",
+      image:"foto-1662413440243.jpeg",
       birthday:"2008/08/08",
       roles_id: 1,
       }

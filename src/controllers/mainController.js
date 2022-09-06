@@ -16,7 +16,7 @@ const controller = {
         }
     })
     .then (products => {
-        res.render("admin" , { title:busqueda, products,session: req.session ? req.session : "" })
+        res.render("productList" , { products,session: req.session ? req.session : "" })
     })
 
 }

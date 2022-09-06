@@ -6,6 +6,7 @@ const { body } = require('express-validator');
 const controller = require("../controllers/productsController");
 const userLoggedMiddleware =require('../middlewares/userLoggedMiddleware');
 const productValidator = require ('../middlewares/productValidator')
+const adminMiddleware = require("../middlewares/adminMiddleware")
 
 // const validateCreateForm =[
 //     body('name').isLength({min:2}).withMessage('complete el nombre del producto '),
@@ -27,9 +28,9 @@ const upload = multer({ storage })
 
 router.get('/', controller.find);
 router.get('/detail/:id', controller.findOne);
-router.get('/create', controller.createForm);
+router.get('/create',adminMiddleware, controller.createForm);
 router.post('/create', upload.single('image'),productValidator, controller.create);
-router.get('/update/:id', controller.updateForm);
+router.get('/update/:id', adminMiddleware,controller.updateForm);
 router.put('/update/:id',  upload.single('image'), productValidator, controller.update);
 router.get('/delete/:id', controller.delete);
 router.delete("/delete/:id", controller.destroy); 

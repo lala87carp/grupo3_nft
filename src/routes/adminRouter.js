@@ -4,9 +4,9 @@ const router = express.Router();
 
 
 const adminController = require ("../controllers/adminControllers"); 
+const adminMiddleware = require("../middlewares/adminMiddleware")
 
-
-router.get("/", adminController.index);
+router.get("/", adminMiddleware, adminController.index);
 
 // router.delete('delete/:id', adminController.destroy);
 

@@ -10,7 +10,7 @@ const controller = {
     
     index: (req, res) => {
         let userDataBase = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../Data/userDataBase.json')));
-        res.render(path.resolve(__dirname, '../views/register'));
+        res.render(path.resolve(__dirname, '../views/register'), {session: req.session ? req.session : ""});
     },
 
     create: async (req, res) => {
@@ -88,7 +88,7 @@ const controller = {
             
         })
         delete user.password
-        req.session.userLogged = user.id;
+        req.session.userLogged = user.roles_id;
         if (req.body.remember_user) {
             res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })
         }

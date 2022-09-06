@@ -60,7 +60,7 @@ const controller = {
     find: async (req, res) => {
         const products = await db.Product.findAll()
 
-        res.render('./admin', { products });
+        res.render('admin', { products });
     },
     findOne: async (req, res) => {
         const { id } = req.params;

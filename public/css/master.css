@@ -488,9 +488,9 @@ footer {
     
   }
 
-  a:link {
-    cursor: pointer;
+  a, a:visited, a:hover, a:active {
     text-decoration: none;
+    color: inherit;
 }
 
 /* product card */

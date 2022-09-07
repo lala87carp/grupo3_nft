@@ -88,7 +88,11 @@ const controller = {
             
         })
         delete user.password
-        req.session.userLogged = user.roles_id;
+        req.session.userLogged = {
+             rol : user.roles_id,
+             id : user.id
+        }
+
         if (req.body.remember_user) {
             res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })
         }
@@ -107,7 +111,7 @@ const controller = {
     },
    
     profile: async (req, res) => {
-        const user =  await db.User.findByPk(req.session.userLogged)
+        const user =  await db.User.findByPk(req.session.userLogged.id)
         return res.render('profile', {
            user, session: req.session ? req.session : ""
         })

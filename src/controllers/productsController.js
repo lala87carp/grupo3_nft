@@ -64,7 +64,7 @@ const controller = {
     },
     findOne: async (req, res) => {
         const { id } = req.params;
-        const product = await db.Product.findOne({ where: { id } });
+        const product = await db.Product.findOne({ where: { id }, include: [{association: "category"}] });
 
         if (!product) return res.redirect('/not-found');
 

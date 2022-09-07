@@ -10,7 +10,7 @@ const controller = {
         res.render("productDetail")
     },
     createForm: (req, res) => {
-        res.render("productCreateForm", {products, session: req.session ? req.session : "" })
+        res.render("productCreateForm", { session: req.session ? req.session : "" })
     },
     updateForm: async (req, res) => {
         const { id } = req.params;
@@ -23,7 +23,8 @@ const controller = {
         try {
             const errors = validationResult(req);
             if (!errors.isEmpty()) {
-                return res.render('productCreateForm', { errors: errors.array() });
+                return res.render('productCreateForm', { errors: errors.array() ,
+                    session: req.session ? req.session : "" });
             }
             const { name, price, autor, category_id } = req.body;
             if (!name || !price || !autor || !category_id) {
@@ -50,7 +51,8 @@ const controller = {
         } catch (error) {
             res.render('productCreateForm', {
                 errors: [{
-                    msg: "Ocurrio un error. Comunicate con el administrador."
+                    msg: "Ocurrio un error. Comunicate con el administrador.",
+                    session: req.session ? req.session : ""
                 }]
 
             })

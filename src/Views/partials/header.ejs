@@ -12,8 +12,9 @@
                     <h3>Menu</h3>
                 </label>
                 <nav id="main-menu">
-                    <li class="item" style="color:black; pointer-events:none; text-decoration: none;"><a href="/search?searchAllProds="">Productos</a></li>
-                <li class="item"><a href="/user/register">Registrate</a></li>
+                    <li class="item" style="color:black; pointer-events:none; text-decoration: none;"><a
+                            href="/search?searchAllProds="">Productos</a></li>
+                <li class=" item"><a href="/user/register">Registrate</a></li>
                     <li class="item"><a href="/user/login">Inicia Sesión</a></li>
                     </ul>
                 </nav>
@@ -28,19 +29,19 @@
             </a>
         </div>
         <div>
-            <div class="iconos-barra-logo">
-                <% if (session.userLogged && session.userLogged.rol==1) { %>
-                    <a href="/admin">
-                        <i class="fas fa-user-cog"></i>
-                    </a>
-                    <% } %>
-            </div>
-
-
 
             <div class="iconos-barra-logo">
+                <div class="iconos-barra-logo">
+                    <% if (session.userLogged && session.userLogged.rol==1) { %>
+                        <a href="/admin">
+                            <i class="fas fa-user-cog"></i>
+                        </a>
+                        <% } %>
+                </div>
+                
 
                 <div class="menu-hamburguesa">
+                    
 
                 </div>
 

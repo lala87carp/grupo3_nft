@@ -9,10 +9,12 @@
                     Seguro que deseas eliminar el producto <%= product.name %>?
                 </h1>
                 <br>
-                <a href="/admin"><button>No</button></a>
+                <div class="deleteboton">
+                <a class="dltbtn" href="/admin"><button>No</button></a>
                 <form action="/product/delete/<%=product.id%>?_method=DELETE" method="post">
-                    <button type="submit">Si</button>
+                    <button class="dltbtn" type="submit">Si</button>
                 </form>
+            </div>
             </div>
 
 

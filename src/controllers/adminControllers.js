@@ -7,7 +7,7 @@ const controller = {
     index: async (req, res) => {
         const products = await db.Product.findAll()
         
-        res.render('./admin', { products, session: req.session ? req.session : "" });
+        res.render('/admin');
     },
     // index: (req, res) => {
     //     let productDataBase = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../Data/productDataBase.json')));

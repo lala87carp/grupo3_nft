@@ -2,7 +2,18 @@
     <section class="barra-logo">
 
         <div class="menu-hamburguesa">
-            <i class="fas fa-bars"></i>
+            <div class="menu-burga">
+        <i class="fas fa-bars"></i>
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+                <span></span>
+            </label>
+            <ul class="menu-hamburguesa">
+                <li class="menu__item"><a href="/search?searchAllProds="">Productos</a></li>
+                <li class="menu__item"><a href="/user/register">Registrate</a></li>
+                <li class="menu__item"><a href="/user/login">Inicia Sesión</a></li>
+            </ul>
+        </div>
         </div>
 
         <div class="logo">
@@ -10,19 +21,18 @@
                 <img src="/images/logo_NFT-logo.png">
             </a>
         </div>
+       
+        
 
+        
+        
         <div class="iconos-barra-logo">
-            <% if (session.userLogged && session.userLogged==1) { %>
-                <a href="/admin">
-                    <i class="fas fa-user-cog"></i>
-                </a>
-                <% } %>
-
-                    <div class="menu-hamburguesa">
-                        <i class="fas fa-bars"></i>
-                    </div>
-
-                    <!-- <div class="logo">
+            
+        <div class="menu-hamburguesa">
+                    
+          </div>
+        
+        <!-- <div class="logo">
             <a href="/">
             <img src="/images/logo_NFT-logo.png">
           </a>
@@ -32,23 +42,23 @@
             <a href="/admin">
                 <i class="fas fa-user-cog"></i>
             </a> -->
-                    <a href="/login">
-                        <i class="fas fa-user"></i>
-                    </a>
 
-                    <a href="/user/productCart">
-                        <i class="fas fa-shopping-cart"> </i>
-                    </a>
-                    <a href="/user/logout">
-                        <i class="fas fa-sign-out-alt"></i>
-                    </a>
 
+            <a href="/login">
+                <i class="fas fa-user" ></i>
+            </a>
+            <a href="/user/productCart">
+                <i class="fas fa-shopping-cart"> </i>
+            </a>
+            <a href="/user/logout"> 
+                <i class="fas fa-sign-out-alt"></i>
+            </a>
         </div>
     </section>
     <section class="menu-header">
         <ul>
             <li href="/"><i class="fas fa-home"></i></li>
-            <li href="#">CATEGORÍAS</li>
+            <li class="menu__item"> <a href="/search?searchAllProds=">PRODUCTOS</a> </li>
             <li href="#">TOP VENTAS</li>
             <li href="#">NUEVOS</li>
             <li href="#">RECURSOS</li>

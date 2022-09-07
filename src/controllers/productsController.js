@@ -10,13 +10,13 @@ const controller = {
         res.render("productDetail")
     },
     createForm: (req, res) => {
-        res.render("productCreateForm")
+        res.render("productCreateForm", {products, session: req.session ? req.session : "" })
     },
     updateForm: async (req, res) => {
         const { id } = req.params;
         const product = await db.Product.findOne({ where: { id } });
 
-        res.render("edit", { productEdit: product })
+        res.render("edit", { productEdit: product})
     },
 
     create: async (req, res) => {
@@ -44,7 +44,7 @@ const controller = {
             }
             const product = await db.Product.create(newProduct);
 
-            res.redirect(`/product/detail/${product.id}`)
+            res.redirect(`/product/detail/${product.id},`)
 
 
         } catch (error) {
@@ -80,7 +80,7 @@ const controller = {
                 const { id } = req.params;
                 const product = await db.Product.findOne({ where: { id } });
 
-                return res.render('edit', { errors: errors.array(), productEdit: product, session: req.session ? req.session : "" });
+                return res.render('edit', { errors: errors.array(), productEdit: product});
             }
 
             const paramsToUpdate = { ...req.body };

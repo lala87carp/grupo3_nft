@@ -12,20 +12,20 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    await queryInterface.bulkInsert('users', [
-      {
-        name: "Laura",
-        email: "Laura@gmail.com",
-        birthday: "1994/03/22",
-        roles_id: 1,
-        password: bcrypt.hashSync("123456",10),
-        image:"foto-1662413440243.jpeg",
-
-      },
+   await queryInterface.bulkInsert('users', [
       {
         name: "Braian",
         email: "Braian_maynard@hotmail.com",
         birthday: "1997/07/21",
+        roles_id: 1,
+        password: bcrypt.hashSync("123456",10),
+        image:"foto-1662413440243.jpeg",
+   
+      },
+      {
+        name: "Laura",
+        email: "Laura@gmail.com",
+        birthday: "1994/03/22",
         roles_id: 1,
         password: bcrypt.hashSync("123456",10),
         image:"foto-1662413440243.jpeg",

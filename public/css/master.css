@@ -118,7 +118,7 @@ header {
     border: 1px solid #ff740f;
     border-right: none;
     padding: 5px;
-    height: 20px;
+    height: 40px;
     border-radius: 5px 0 0 5px;
     outline: none;
     color: #9DBFAF;
@@ -130,9 +130,9 @@ header {
     background: #ff740f;
     text-align: center;
     color: #fff;
-    border-radius: 0 5px 5px 0;
+    border-radius: 0 5px 5px;
     cursor: pointer;
-    
+    height: 40px;
 }
 
 .boton-novedades {
@@ -498,6 +498,7 @@ footer {
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
+    height: 450px;
     margin: auto;
     text-align: center;
     font-family: arial;
@@ -520,8 +521,55 @@ footer {
     width: 100vw
   }
 
+  /* .bar-btn {
+    font-size: 25px;
+    color: white;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+
+  .nav-menu {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 100px;
+    background-color: #1c415d;
+    text-align: center;
+    transition: all 5s;
+  }
+
+  .nav-menu li {
+    display: none;
+    line-height: 30px;
+    margin: 50px 0;
+    transition: all 5s;
+  }
+
+  .nav-menu li a {
+    color: #FFFFFF;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .nav-menu li a.active, .nav-menu li a:hover {
+    color:#1c415d ;
+    transition: 3s;
+  }
   
-  
+  #check {
+    display: none;
+  }
+
+  #check:checked .nav-menu {
+    height: 100vh;
+  }
+
+  #check:checked .nav-menu li {
+    display: block;
+  } */
+
+
 
 /* preguntas-frecuentes */
 

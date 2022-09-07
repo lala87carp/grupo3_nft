@@ -1,47 +1,47 @@
 <header>
     <section class="barra-logo">
-        
+
         <div class="menu-hamburguesa">
-        <i class="fas fa-bars"></i>
+            <i class="fas fa-bars"></i>
         </div>
-        
+
         <div class="logo">
             <a href="/">
-            <img src="/images/logo_NFT-logo.png">
-          </a>
+                <img src="/images/logo_NFT-logo.png">
+            </a>
         </div>
-        
+
         <div class="iconos-barra-logo">
-            <% if (session.userLogged && session.userLogged== 1) { %>
+            <% if (session.userLogged && session.userLogged==1) { %>
                 <a href="/admin">
                     <i class="fas fa-user-cog"></i>
                 </a>
                 <% } %>
 
-                <div class="menu-hamburguesa">
-        <i class="fas fa-bars"></i>
-        </div>
-        
-        <!-- <div class="logo">
+                    <div class="menu-hamburguesa">
+                        <i class="fas fa-bars"></i>
+                    </div>
+
+                    <!-- <div class="logo">
             <a href="/">
             <img src="/images/logo_NFT-logo.png">
           </a>
         </div> -->
-        
-        <!-- <div class="iconos-barra-logo">
+
+                    <!-- <div class="iconos-barra-logo">
             <a href="/admin">
                 <i class="fas fa-user-cog"></i>
             </a> -->
-            <a href="/login">
-                <i class="fas fa-user" ></i>
-            </a>
+                    <a href="/login">
+                        <i class="fas fa-user"></i>
+                    </a>
 
-            <a href="/user/productCart">
-                <i class="fas fa-shopping-cart"> </i>
-            </a>
-            <a href="/user/logout"> 
-                <i class="fas fa-sign-out-alt"></i>
-            </a>
+                    <a href="/user/productCart">
+                        <i class="fas fa-shopping-cart"> </i>
+                    </a>
+                    <a href="/user/logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
 
         </div>
     </section>
@@ -55,7 +55,7 @@
         </ul>
     </section>
     <form class="buscador" action="/search">
-        <input type="search" class="caja-buscador" placeholder="Buscador" name="searchAllProds" >
+        <input type="search" class="caja-buscador" placeholder="Buscador" name="searchAllProds">
         <button type="submit" class="boton-buscador">
             <i class="fa fa-search"></i>
         </button>

@@ -6,7 +6,8 @@ const router = express.Router();
 const adminController = require ("../controllers/adminControllers"); 
 const adminMiddleware = require("../middlewares/adminMiddleware")
 
-router.get("/", adminMiddleware, adminController.index);
+router.get("/admin", adminMiddleware, adminController.index);
+
 
 // router.delete('delete/:id', adminController.destroy);
 

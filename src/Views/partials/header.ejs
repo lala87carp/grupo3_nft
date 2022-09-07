@@ -1,63 +1,71 @@
 <header>
     <section class="barra-logo">
-        
+
         <div class="menu-hamburguesa">
             <div class="menu-burga">
-        
-            <input id="check" type="checkbox" />
-            <label class="bar-btn" for="check">
-                <i class="fas fa-bars"></i>
-            </label>
-            <ul class="nav-menu">
-                <li class="item"><a href="/search?searchAllProds="">Productos</a></li>
-                <li class="item"><a href="/user/register">Registrate</a></li>
-                <li class="item"><a href="/user/login">Inicia Sesión</a></li>
-            </ul>
+
+                <input type="checkbox" id="hambrger-input" class="fas fa-bars" />
+
+                <label id="hamburger-menu" for="hamburger-input">
+                    <nav id="sidebar-menu"></nav>
+                    <i class="fas fa-bars"></i>
+                    <h3>Menu</h3>
+                </label>
+                <nav id="main-menu">
+                    <li class="item"><a href="/search?searchAllProds="">Productos</a></li>
+                <li class=" item"><a href="/user/register">Registrate</a></li>
+                    <li class="item"><a href="/user/login">Inicia Sesión</a></li>
+                    </ul>
+                </nav>
+                </nav>
+                </label>
+            </div>
         </div>
-        </div>
-        
+
         <div class="logo">
             <a href="/">
-            <img src="/images/logo_NFT-logo.png">
-          </a>
+                <img src="/images/logo_NFT-logo.png">
+            </a>
         </div>
-        <div class="iconos-barra-logo">
-            <% if (session.userLogged && session.userLogged == 1) { %>
-                <a href="/admin">
-                    <i class="fas fa-user-cog"></i>
-                </a>
-                <% } %>
+        <div>
+            <div class="iconos-barra-logo">
+                <% if (session.userLogged && session.userLogged==1) { %>
+                    <a href="/admin">
+                        <i class="fas fa-user-cog"></i>
+                    </a>
+                    <% } %>
+            </div>
 
-        
-        
-        <div class="iconos-barra-logo">
-            
-        <div class="menu-hamburguesa">
-                    
-          </div>
-        
-        <!-- <div class="logo">
+
+
+            <div class="iconos-barra-logo">
+
+                <div class="menu-hamburguesa">
+
+                </div>
+
+                <!-- <div class="logo">
             <a href="/">
             <img src="/images/logo_NFT-logo.png">
           </a>
         </div> -->
-        
-        <!-- <div class="iconos-barra-logo">
+
+                <!-- <div class="iconos-barra-logo">
             <a href="/admin">
                 <i class="fas fa-user-cog"></i>
             </a> -->
 
 
-            <a href="/login">
-                <i class="fas fa-user" ></i>
-            </a>
-            <a href="/user/productCart">
-                <i class="fas fa-shopping-cart"> </i>
-            </a>
-            <a href="/user/logout"> 
-                <i class="fas fa-sign-out-alt"></i>
-            </a>
-        </div>
+                <a href="/login">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="/user/productCart">
+                    <i class="fas fa-shopping-cart"> </i>
+                </a>
+                <a href="/user/logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+            </div>
     </section>
     <section class="menu-header">
         <ul>
@@ -69,7 +77,7 @@
         </ul>
     </section>
     <form class="buscador" action="/search">
-        <input type="search" class="caja-buscador" placeholder="Buscador" name="searchAllProds" >
+        <input type="search" class="caja-buscador" placeholder="Buscador" name="searchAllProds">
         <button type="submit" class="boton-buscador">
             <i class="fa fa-search"></i>
         </button>

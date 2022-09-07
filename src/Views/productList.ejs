@@ -8,6 +8,7 @@
                 
 
                 <section class="products">
+                    <% if (products.length > 0) { %>
                     <h3 class="p">PRODUCTOS</h3>
                     <div class="galeria-obras">
                         <% products.forEach(product=>{ %>
@@ -36,6 +37,9 @@
                             </article>
                             <% }) %>
                     </div>
+                    <% }else { %> 
+                        <h3>Lo sentimos, no encontramos el producto que estas buscando</h3>
+                        <% }  %>
 
                 </section>
             </main>

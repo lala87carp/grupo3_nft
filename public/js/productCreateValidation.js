@@ -40,6 +40,8 @@ window.addEventListener("load", function () {
             for (let i = 0; i < errores.length; i++) {
                 erroresUl.innerHTML += "<li>" + errores[i] + "</li>";
             };
+        }else {
+            formulario.submit()
         };
 
 

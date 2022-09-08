@@ -10,13 +10,14 @@ const controller = {
         res.render("productDetail")
     },
     createForm: (req, res) => {
-        res.render("productCreateForm", { session: req.session ? req.session : "" })
+        res.render("productCreateForm", {session: req.session ? req.session : "" })
     },
     updateForm: async (req, res) => {
         const { id } = req.params;
         const product = await db.Product.findOne({ where: { id } });
 
-        res.render("edit", { productEdit: product})
+        res.render("edit", { productEdit: product,
+            session: req.session ? req.session : "" })
     },
 
     create: async (req, res) => {
@@ -34,7 +35,7 @@ const controller = {
                                 .filter(field => !req.body[field])
                                 .join(', ')
                             }`
-                    }
+                    }, session: req.session ? req.session : ""
                 })
             }
             const newProduct = { ...req.body, category_id: Number(category_id) }
@@ -82,7 +83,8 @@ const controller = {
                 const { id } = req.params;
                 const product = await db.Product.findOne({ where: { id } });
 
-                return res.render('edit', { errors: errors.array(), productEdit: product});
+                return res.render('edit', { errors: errors.array(), productEdit: product,
+                    session: req.session ? req.session : ""});
             }
 
             const paramsToUpdate = { ...req.body };
